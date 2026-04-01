@@ -15,18 +15,18 @@
   --text-hero: clamp(2.8rem, 1.8rem + 5vw, 6.5rem);
 
   /* Colors — deep space tech palette */
-  --color-bg: #05080f;
-  --color-surface: #0b1120;
-  --color-surface-2: #111a2e;
-  --color-primary: #00d4ff;
-  --color-primary-dim: #007a99;
-  --color-accent: #ff3c6f;
-  --color-accent-2: #a855f7;
-  --color-gold: #f0c040;
-  --color-text: #e8edf5;
-  --color-text-muted: #7b8ba8;
-  --color-border: rgba(0, 212, 255, 0.12);
-  --color-glow: rgba(0, 212, 255, 0.15);
+  --color-bg: #08090C;
+  --color-surface: #0E1016;
+  --color-surface-2: #161820;
+  --color-primary: #C8A84E;
+  --color-primary-dim: #8B6914;
+  --color-accent: #DBBF6A;
+  --color-accent-2: #F0DFA0;
+  --color-gold: #C8A84E;
+  --color-text: #F0E6D0;
+  --color-text-muted: #6B6055;
+  --color-border: rgba(200, 168, 78, 0.12);
+  --color-glow: rgba(200, 168, 78, 0.15);
 
   /* Spacing */
   --space-xs: 0.25rem;
