@@ -1,0 +1,47 @@
+:root {
+  /* Typography */
+  --font-display: 'Exo 2', sans-serif;
+  --font-body: 'Outfit', sans-serif;
+  --font-mono: 'Share Tech Mono', monospace;
+
+  /* Type scale */
+  --text-xs: clamp(0.7rem, 0.65rem + 0.25vw, 0.8rem);
+  --text-sm: clamp(0.8rem, 0.75rem + 0.3vw, 0.95rem);
+  --text-base: clamp(0.95rem, 0.85rem + 0.5vw, 1.1rem);
+  --text-lg: clamp(1.15rem, 0.95rem + 0.9vw, 1.45rem);
+  --text-xl: clamp(1.4rem, 1.1rem + 1.4vw, 2rem);
+  --text-2xl: clamp(1.8rem, 1.3rem + 2.5vw, 3rem);
+  --text-3xl: clamp(2.4rem, 1.6rem + 3.5vw, 4.2rem);
+  --text-hero: clamp(2.8rem, 1.8rem + 5vw, 6.5rem);
+
+  /* Colors — deep space tech palette */
+  --color-bg: #05080f;
+  --color-surface: #0b1120;
+  --color-surface-2: #111a2e;
+  --color-primary: #00d4ff;
+  --color-primary-dim: #007a99;
+  --color-accent: #ff3c6f;
+  --color-accent-2: #a855f7;
+  --color-gold: #f0c040;
+  --color-text: #e8edf5;
+  --color-text-muted: #7b8ba8;
+  --color-border: rgba(0, 212, 255, 0.12);
+  --color-glow: rgba(0, 212, 255, 0.15);
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+  --space-2xl: 8rem;
+
+  /* Layout */
+  --max-width: 1200px;
+  --border-radius: 2px;
+  --border-radius-lg: 6px;
+
+  /* Transitions */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}

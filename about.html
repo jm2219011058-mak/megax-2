@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Mega X Holding Ltd.</title>
+  <meta name="description" content="Learn about Mega X Holding Ltd., our leadership team, mission, and approach to building next-generation wireless semiconductor technology.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/variables.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/utilities.css">
+  <link rel="stylesheet" href="styles/animations.css">
+  <style>
+    .page-hero {
+      padding: calc(80px + var(--space-2xl)) 0 var(--space-2xl);
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero h1 { margin-bottom: var(--space-md); }
+    .page-hero .accent { color: var(--color-primary); }
+
+    /* Mission block */
+    .mission-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-2xl);
+      align-items: center;
+    }
+    .mission-text h2 { margin-bottom: var(--space-lg); }
+    .mission-visual {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      padding: var(--space-xl);
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 2;
+      position: relative;
+    }
+    .mission-visual .highlight {
+      color: var(--color-primary);
+      font-weight: 600;
+    }
+    @media (max-width: 768px) {
+      .mission-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Leadership */
+    .leader-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: var(--space-lg);
+    }
+    .leader-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      padding: var(--space-xl);
+      transition: border-color 0.3s var(--ease-out);
+    }
+    .leader-card:hover { border-color: var(--color-primary-dim); }
+    .leader-initials {
+      width: 56px;
+      height: 56px;
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-primary-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: var(--text-lg);
+      color: var(--color-primary);
+      margin-bottom: var(--space-md);
+    }
+    .leader-card h4 { font-size: var(--text-base); margin-bottom: 4px; }
+    .leader-role {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--color-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: var(--space-md);
+    }
+    .leader-card p {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+
+    /* Values */
+    .values-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--color-border);
+      border: 1px solid var(--color-border);
+    }
+    .value-item {
+      background: var(--color-bg);
+      padding: var(--space-xl);
+    }
+    .value-number {
+      font-family: var(--font-display);
+      font-size: var(--text-3xl);
+      font-weight: 800;
+      color: var(--color-surface-2);
+      line-height: 1;
+      margin-bottom: var(--space-md);
+    }
+    .value-item h4 { font-size: var(--text-base); margin-bottom: var(--space-sm); }
+    .value-item p { font-size: var(--text-sm); color: var(--color-text-muted); }
+    @media (max-width: 768px) {
+      .values-strip { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .values-strip { grid-template-columns: 1fr; }
+    }
+
+    /* Careers */
+    .careers-cta {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      padding: var(--space-2xl);
+      text-align: center;
+    }
+    .careers-cta h3 { margin-bottom: var(--space-md); }
+    .careers-cta p {
+      color: var(--color-text-muted);
+      max-width: 48ch;
+      margin: 0 auto var(--space-lg);
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div class="loader-overlay" aria-hidden="true"><div class="loader-bar"></div></div>
+
+  <nav class="nav" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">MEGA<span class="logo-x">X</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#portfolio">Portfolio</a></li>
+        <li><a href="index.html#markets">Markets</a></li>
+        <li><a href="index.html#roadmap">Roadmap</a></li>
+        <li><a href="about.html">Company</a></li>
+        <li><a href="contact.html" class="btn btn-primary" style="padding:0.5rem 1.2rem;">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" role="dialog" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="index.html#portfolio">Portfolio</a>
+    <a href="about.html">Company</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <main id="main">
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="grid-bg"></div>
+      <div class="glow-orb" style="width:500px;height:500px;background:var(--color-accent-2);top:-200px;left:-100px;"></div>
+      <div class="container relative z-1">
+        <p class="overline reveal" style="margin-bottom:var(--space-md);">About Mega X</p>
+        <h1 class="reveal" style="transition-delay:80ms;">The <span class="accent">Team</span> Behind<br>the Silicon</h1>
+        <p class="text-muted reveal" style="transition-delay:160ms;font-size:var(--text-lg);max-width:55ch;">
+          We are semiconductor veterans, RF engineers, and system architects united by a single mission: making the world's wireless infrastructure smarter, faster, and more secure.
+        </p>
+      </div>
+    </section>
+
+    <!-- Mission -->
+    <section>
+      <div class="container mission-grid">
+        <div class="mission-text reveal-left">
+          <p class="overline" style="margin-bottom:var(--space-md);">Our Mission</p>
+          <h2>Secure Connectivity at Every Scale</h2>
+          <p class="text-muted" style="margin-top:var(--space-lg);">
+            High-end RF chip development requires deep, long-term expertise across analog design, RF engineering, and system architecture. Our team brings decades of combined experience from leading global semiconductor firms.
+          </p>
+          <p class="text-muted" style="margin-top:var(--space-md);">
+            We design for the full wireless spectrum — from ultra-low-power sub-1 GHz HaLow sensors to high-throughput Wi-Fi 7 enterprise access points — with built-in hardware security and edge intelligence that traditional chipmakers can't match.
+          </p>
+        </div>
+        <div class="mission-visual reveal-right">
+          <div style="margin-bottom:var(--space-md);color:var(--color-primary);font-weight:600;">// technology_stack.conf</div>
+          <span class="highlight">RF_BANDS</span>      = [ &lt;1GHz, 2.4G, 5G, 6G, 5G-NR ]<br>
+          <span class="highlight">PROCESS</span>       = [ TSMC_40nm, TSMC_28nm, GF_22nm ]<br>
+          <span class="highlight">ARCHITECTURE</span>  = SDR_PROGRAMMABLE<br>
+          <span class="highlight">SECURITY</span>      = PUF_HARDWARE_ROOT<br>
+          <span class="highlight">AI_ENGINE</span>     = EDGE_NEURAL_INFERENCE<br>
+          <span class="highlight">PRODUCT_LINES</span> = 6<br>
+          <span class="highlight">TARGET_2031</span>   = $1.5B_REVENUE<br>
+          <span class="highlight">STATUS</span>        = <span style="color:var(--color-gold);">ACTIVE</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="container"><div class="divider"></div></div>
+
+    <!-- Leadership -->
+    <section id="leadership">
+      <div class="container">
+        <div class="reveal" style="margin-bottom:var(--space-xl);">
+          <p class="overline">Leadership</p>
+          <h2 style="margin-top:var(--space-md);">Executive Team</h2>
+        </div>
+        <div class="leader-grid stagger">
+          <div class="leader-card reveal">
+            <div class="leader-initials">ZJ</div>
+            <h4>Zhiyong Jiang</h4>
+            <div class="leader-role">Chief Executive Officer</div>
+            <p>Embedded systems architect with deep expertise in large-scale IT infrastructure and ecosystem leadership. Drives Mega X's strategic vision and investor relations.</p>
+          </div>
+          <div class="leader-card reveal">
+            <div class="leader-initials">COO</div>
+            <h4>Chief Operating Officer</h4>
+            <div class="leader-role">R&D & Operations</div>
+            <p>Veteran semiconductor operations leader with experience managing large-scale SoC development programs from design through mass production.</p>
+          </div>
+          <div class="leader-card reveal">
+            <div class="leader-initials">DCE</div>
+            <h4>Director of Chip Engineering</h4>
+            <div class="leader-role">Design Leadership</div>
+            <p>Specialist in Wi-Fi chipset R&D and mass production processes, overseeing the complete design-to-silicon pipeline across all product lines.</p>
+          </div>
+          <div class="leader-card reveal">
+            <div class="leader-initials">DMS</div>
+            <h4>Director of Manufacturing</h4>
+            <div class="leader-role">Supply Chain</div>
+            <p>International electronics manufacturing expert with extensive experience in RF test, packaging operations, and foundry relationship management.</p>
+          </div>
+          <div class="leader-card reveal">
+            <div class="leader-initials">WSA</div>
+            <h4>Wi-Fi System Architect</h4>
+            <div class="leader-role">System Architecture</div>
+            <p>Wi-Fi chip system architecture lead with a proven track record in high-volume commercial chip development and deployment.</p>
+          </div>
+          <div class="leader-card reveal">
+            <div class="leader-initials">RAD</div>
+            <h4>RF & Analog Design Lead</h4>
+            <div class="leader-role">RF Engineering</div>
+            <p>High-end cellular and Wi-Fi RF design specialist responsible for the analog front-end across the full-band product portfolio.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values -->
+    <section>
+      <div class="container">
+        <div class="reveal" style="text-align:center;max-width:500px;margin:0 auto var(--space-xl);">
+          <p class="overline" style="justify-content:center;">Our Principles</p>
+          <h2 style="margin-top:var(--space-md);">What Drives Us</h2>
+        </div>
+        <div class="values-strip reveal-scale">
+          <div class="value-item">
+            <div class="value-number">01</div>
+            <h4>Technical Depth</h4>
+            <p>RF chip design demands years of accumulated expertise. We invest in deep specialization, not shortcuts.</p>
+          </div>
+          <div class="value-item">
+            <div class="value-number">02</div>
+            <h4>Supply Resilience</h4>
+            <p>Our dual-foundry approach and fabless model ensure we're never at the mercy of a single supplier or fab.</p>
+          </div>
+          <div class="value-item">
+            <div class="value-number">03</div>
+            <h4>Security by Design</h4>
+            <p>Hardware-rooted PUF security isn't a feature — it's a foundational layer baked into every chip we ship.</p>
+          </div>
+          <div class="value-item">
+            <div class="value-number">04</div>
+            <h4>Market Clarity</h4>
+            <p>We build silicon for real demand curves — every product line maps to a validated market with confirmed buyer interest.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Careers CTA -->
+    <section id="careers">
+      <div class="container">
+        <div class="careers-cta reveal-scale">
+          <p class="overline" style="justify-content:center;margin-bottom:var(--space-md);">Careers</p>
+          <h3>Join the Next Wave of Wireless Innovation</h3>
+          <p>We're building engineering teams across RF design, Wi-Fi baseband, SoC integration, and edge-AI. If you thrive on hard problems and deep technology, let's talk.</p>
+          <a href="contact.html" class="btn btn-primary">View Open Roles →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">MEGA<span class="logo-x">X</span></a>
+          <p>Next-generation semiconductor solutions powering secure, scalable connectivity for the global IoT ecosystem.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="about.html#leadership">Leadership</a></li>
+            <li><a href="about.html#careers">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Products</h5>
+          <ul>
+            <li><a href="index.html#portfolio">Wi-Fi HaLow</a></li>
+            <li><a href="index.html#portfolio">Wi-Fi 6/7 SoC</a></li>
+            <li><a href="index.html#portfolio">Freya Transceiver</a></li>
+            <li><a href="index.html#portfolio">Edge AI</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Connect</h5>
+          <ul>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html">Investor Relations</a></li>
+            <li><a href="contact.html">Press</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Mega X Holding Ltd. All rights reserved.</span>
+        <span>Fabless Semiconductor · Global Operations</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" aria-label="Scroll to top">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>

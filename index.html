@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mega X Holding Ltd. — Next-Generation Semiconductor Solutions</title>
+  <meta name="description" content="Mega X Holding Ltd. is a global semiconductor holding company delivering full-band wireless connectivity, edge-AI, and secure RF chipsets for IoT, enterprise, and industrial applications.">
+  <meta property="og:title" content="Mega X Holding Ltd.">
+  <meta property="og:description" content="Next-generation semiconductor solutions powering global connectivity.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/variables.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/utilities.css">
+  <link rel="stylesheet" href="styles/animations.css">
+  <style>
+    /* ===== PAGE-SPECIFIC: HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 80px;
+    }
+    .hero-content { position: relative; z-index: 1; }
+    .hero h1 {
+      margin-bottom: var(--space-lg);
+    }
+    .hero h1 .line { display: block; }
+    .hero h1 .accent { color: var(--color-primary); }
+    .hero-sub {
+      font-size: var(--text-lg);
+      color: var(--color-text-muted);
+      max-width: 50ch;
+      margin-bottom: var(--space-xl);
+      line-height: 1.6;
+    }
+    .hero-actions {
+      display: flex;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+    }
+    .hero-stats {
+      display: flex;
+      gap: var(--space-xl);
+      margin-top: var(--space-2xl);
+      padding-top: var(--space-xl);
+      border-top: 1px solid var(--color-border);
+    }
+    @media (max-width: 768px) {
+      .hero-stats { flex-wrap: wrap; gap: var(--space-lg); }
+      .hero-stats .stat { flex: 1 1 40%; }
+    }
+
+    /* ===== ABOUT SPLIT ===== */
+    .about-split {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: var(--space-2xl);
+      align-items: start;
+    }
+    .about-split .overline { margin-bottom: var(--space-md); }
+    .about-split h2 { margin-bottom: var(--space-lg); }
+    .about-points {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+    .about-points li {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: var(--space-md);
+      align-items: start;
+    }
+    .about-points .icon-circle {
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--color-primary-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--color-primary);
+      flex-shrink: 0;
+    }
+    .about-points h4 {
+      font-size: var(--text-base);
+      margin-bottom: 4px;
+    }
+    .about-points p {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+    @media (max-width: 768px) {
+      .about-split { grid-template-columns: 1fr; gap: var(--space-xl); }
+    }
+
+    /* ===== PRODUCT SECTION ===== */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-lg);
+    }
+    .product-grid .card {
+      padding: var(--space-xl) var(--space-lg);
+    }
+    .product-chip {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 3px 10px;
+      border: 1px solid var(--color-primary-dim);
+      color: var(--color-primary);
+      margin-bottom: var(--space-md);
+    }
+    .product-asp {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: 800;
+      color: var(--color-text);
+      margin-top: var(--space-md);
+    }
+    .product-asp span {
+      font-size: var(--text-sm);
+      font-weight: 400;
+      color: var(--color-text-muted);
+    }
+    .product-meta {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      margin-top: var(--space-sm);
+    }
+    @media (max-width: 1024px) {
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .product-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ===== MARKET SECTION ===== */
+    .market-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: var(--space-lg);
+      height: 280px;
+      padding: var(--space-xl) 0;
+    }
+    .market-bar-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      justify-content: flex-end;
+    }
+    .market-bar {
+      width: 100%;
+      max-width: 80px;
+      background: linear-gradient(180deg, var(--color-primary), var(--color-primary-dim));
+      border-radius: 2px 2px 0 0;
+      position: relative;
+      transition: height 1s var(--ease-out);
+    }
+    .market-bar-label {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      margin-top: var(--space-sm);
+      text-align: center;
+    }
+    .market-bar-value {
+      font-family: var(--font-display);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: var(--space-sm);
+      text-align: center;
+    }
+
+    /* ===== TIMELINE SECTION ===== */
+    .timeline {
+      position: relative;
+      padding-left: var(--space-xl);
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(180deg, var(--color-primary), var(--color-primary-dim), transparent);
+    }
+    .timeline-item {
+      position: relative;
+      padding-bottom: var(--space-xl);
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: calc(-1 * var(--space-xl) - 4px);
+      top: 6px;
+      width: 9px;
+      height: 9px;
+      background: var(--color-primary);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--color-primary);
+    }
+    .timeline-year {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--color-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: var(--space-xs);
+    }
+    .timeline-item h4 {
+      font-size: var(--text-lg);
+      margin-bottom: var(--space-xs);
+    }
+    .timeline-item p {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+
+    /* ===== PARTNERS / CHANNELS ===== */
+    .channel-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--color-border);
+      border: 1px solid var(--color-border);
+    }
+    .channel-item {
+      background: var(--color-surface);
+      padding: var(--space-xl) var(--space-lg);
+      text-align: center;
+      transition: background 0.3s var(--ease-out);
+    }
+    .channel-item:hover { background: var(--color-surface-2); }
+    .channel-item h4 {
+      font-size: var(--text-base);
+      margin-bottom: var(--space-sm);
+    }
+    .channel-item p {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      max-width: 22ch;
+      margin: 0 auto;
+    }
+    @media (max-width: 768px) {
+      .channel-strip { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .channel-strip { grid-template-columns: 1fr; }
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      text-align: center;
+      padding: var(--space-2xl) 0;
+    }
+    .cta-section h2 { margin-bottom: var(--space-md); }
+    .cta-section p {
+      color: var(--color-text-muted);
+      max-width: 48ch;
+      margin: 0 auto var(--space-xl);
+      font-size: var(--text-lg);
+    }
+
+    /* ===== SCROLL TOP ===== */
+    .scroll-top {
+      position: fixed;
+      bottom: var(--space-lg);
+      right: var(--space-lg);
+      width: 44px;
+      height: 44px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s, border-color 0.3s;
+      z-index: 50;
+      font-size: 1.2rem;
+    }
+    .scroll-top.visible { opacity: 1; pointer-events: auto; }
+    .scroll-top:hover { border-color: var(--color-primary); }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- Loader -->
+  <div class="loader-overlay" aria-hidden="true">
+    <div class="loader-bar"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Mega X Holding home">
+        MEGA<span class="logo-x">X</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#markets">Markets</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
+        <li><a href="about.html">Company</a></li>
+        <li><a href="contact.html" class="btn btn-primary" style="padding:0.5rem 1.2rem;">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" role="dialog" aria-label="Mobile navigation">
+    <a href="#about">About</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#markets">Markets</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="about.html">Company</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="grid-bg"></div>
+      <div class="glow-orb" style="width:600px;height:600px;background:var(--color-primary);top:-200px;right:-100px;"></div>
+      <div class="glow-orb" style="width:400px;height:400px;background:var(--color-accent-2);bottom:-150px;left:-100px;"></div>
+      <div class="container hero-content">
+        <p class="overline reveal" style="margin-bottom:var(--space-lg);">Semiconductor Holding Company</p>
+        <h1>
+          <span class="line reveal" style="transition-delay:80ms;">Full-Band</span>
+          <span class="line reveal" style="transition-delay:160ms;"><span class="accent">Wireless</span> Chipsets</span>
+          <span class="line reveal" style="transition-delay:240ms;">for a Connected World</span>
+        </h1>
+        <p class="hero-sub reveal" style="transition-delay:320ms;">
+          Mega X Holding Ltd. invests in and develops next-generation RF, Wi-Fi, and edge-AI semiconductor technologies — from sub-1 GHz IoT to Wi-Fi 7 enterprise systems.
+        </p>
+        <div class="hero-actions reveal" style="transition-delay:400ms;">
+          <a href="#portfolio" class="btn btn-primary">Explore Portfolio →</a>
+          <a href="contact.html" class="btn btn-outline">Investor Relations</a>
+        </div>
+        <div class="hero-stats reveal" style="transition-delay:500ms;">
+          <div class="stat">
+            <div class="stat-value">6</div>
+            <div class="stat-label">Product Lines</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">$1.5B</div>
+            <div class="stat-label">Revenue Target 2031</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">55%+</div>
+            <div class="stat-label">Gross Margin</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">22nm</div>
+            <div class="stat-label">Leading Process Node</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" style="padding-top:var(--space-2xl);">
+      <div class="container about-split">
+        <div class="reveal-left">
+          <p class="overline">Who We Are</p>
+          <h2 style="margin-top:var(--space-md);">Building the Infrastructure of Intelligent Connectivity</h2>
+          <p class="text-muted" style="margin-top:var(--space-lg);font-size:var(--text-lg);">
+            Mega X Holding Ltd. is a global semiconductor holding company with a fabless design model. We develop programmable RF chipsets, hardware-rooted security modules, and edge-AI inference silicon — delivering secure, scalable connectivity across the full wireless spectrum.
+          </p>
+        </div>
+        <ul class="about-points stagger">
+          <li class="reveal">
+            <div class="icon-circle">01</div>
+            <div>
+              <h4>Full-Band Coverage</h4>
+              <p>Only company with a complete Wi-Fi chipset portfolio covering sub-1 GHz (HaLow), 2.4/5/6 GHz bands, and 5G-NR RF transceivers under one roof.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <div class="icon-circle">02</div>
+            <div>
+              <h4>Proprietary RF IP</h4>
+              <p>Software-Defined Radio architecture enables reconfigurable multi-band, multi-standard processing on a unified hardware platform.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <div class="icon-circle">03</div>
+            <div>
+              <h4>PUF-Based Security</h4>
+              <p>Hardware-rooted Physical Unclonable Function (PUF) technology provides tamper-proof device identity and secure authentication at the silicon level.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <div class="icon-circle">04</div>
+            <div>
+              <h4>Edge-AI Integration</h4>
+              <p>On-chip neural network inference modules bring intelligence to the network edge — enabling real-time decision-making without cloud dependency.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="container"><div class="divider"></div></div>
+
+    <!-- ===== PRODUCT PORTFOLIO ===== -->
+    <section id="portfolio">
+      <div class="container">
+        <div class="reveal" style="max-width:600px;margin-bottom:var(--space-xl);">
+          <p class="overline">Product Portfolio</p>
+          <h2 style="margin-top:var(--space-md);">Six Product Lines,<br>One Unified Platform</h2>
+          <p class="text-muted" style="margin-top:var(--space-md);">
+            From low-power IoT radios to high-throughput enterprise transceivers and robotic neural network modules — our silicon addresses every layer of the connectivity stack.
+          </p>
+        </div>
+        <div class="product-grid stagger">
+
+          <div class="card reveal">
+            <span class="product-chip">Wi-Fi HaLow · 802.11ah</span>
+            <h4>G-Link Series</h4>
+            <p class="text-muted" style="font-size:var(--text-sm);">Sub-1 GHz long-range IoT connectivity for smart city, agriculture, and industrial applications. TSMC 40nm.</p>
+            <div class="product-asp">$6 <span>/ unit ASP</span></div>
+            <div class="product-meta">60% gross margin · Mass production Q3 2026</div>
+          </div>
+
+          <div class="card reveal">
+            <span class="product-chip">Wi-Fi 6 SoC</span>
+            <h4>2×2 + BT 5.4 SoC</h4>
+            <p class="text-muted" style="font-size:var(--text-sm);">Station-mode system-on-chip for consumer electronics — TV boxes, tablets, smart home devices. GF 22nm.</p>
+            <div class="product-asp">$3 <span>/ unit ASP</span></div>
+            <div class="product-meta">40% gross margin · Production-ready Q2 2026</div>
+          </div>
+
+          <div class="card reveal">
+            <span class="product-chip">Wi-Fi 6/6e/7 RF</span>
+            <h4>Freya Transceiver</h4>
+            <p class="text-muted" style="font-size:var(--text-sm);">High-performance 4×4 RF transceiver for enterprise routers, drones, and 5G-NR base stations. TSMC 28nm.</p>
+            <div class="product-asp">$20 <span>/ unit ASP</span></div>
+            <div class="product-meta">60% gross margin · Mass production Q3 2026</div>
+          </div>
+
+          <div class="card reveal">
+            <span class="product-chip">Wi-Fi 7 Baseband</span>
+            <h4>4×4 AP Baseband</h4>
+            <p class="text-muted" style="font-size:var(--text-sm);">Next-generation access point baseband positioning Mega X among the global top-5 Wi-Fi 7 silicon vendors. TSMC 28nm.</p>
+            <div class="product-asp">$30 <span>/ unit ASP</span></div>
+            <div class="product-meta">60% gross margin · Target Q3 2027</div>
+          </div>
+
+          <div class="card reveal">
+            <span class="product-chip">Wi-Fi 7 AP SoC</span>
+            <h4>2×2 Mid-Range SoC</h4>
+            <p class="text-muted" style="font-size:var(--text-sm);">Integrated transceiver + baseband for mid-range routers. Targeting the $75M+ annual router chip market. GF 22nm.</p>
+            <div class="product-asp">$15 <span>/ unit ASP</span></div>
+            <div class="product-meta">50% gross margin · Target Q3 2027</div>
+          </div>
+
+          <div class="card reveal">
+            <span class="product-chip">Edge AI · Robotics</span>
+            <h4>Joint Neural Network</h4>
+            <p class="text-muted" style="font-size:var(--text-sm);">Neural network inference at the robotic joint level — enabling intelligent motion control for industrial automation.</p>
+            <div class="product-asp">$10 <span>/ unit ASP</span></div>
+            <div class="product-meta">50% gross margin · Chip sales Q1 2028</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MARKETS ===== -->
+    <section id="markets" style="background:var(--color-surface);">
+      <div class="container">
+        <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto var(--space-xl);">
+          <p class="overline" style="justify-content:center;">Market Opportunity</p>
+          <h2 style="margin-top:var(--space-md);">Riding the $80B+ Wireless Chip Wave</h2>
+          <p class="text-muted" style="margin-top:var(--space-md);margin-left:auto;margin-right:auto;">
+            The global RF chip market was valued at $46.5B in 2024. Wi-Fi 6/6E/7 chipsets alone are projected to reach $80.9B by 2030, with Wi-Fi 7 comprising $22.9B of that total.
+          </p>
+        </div>
+
+        <div class="market-bars reveal-scale" style="max-width:700px;margin:0 auto;">
+          <div class="market-bar-col">
+            <div class="market-bar-value">$46.5B</div>
+            <div class="market-bar" style="height:55%;"></div>
+            <div class="market-bar-label">RF Chips 2024</div>
+          </div>
+          <div class="market-bar-col">
+            <div class="market-bar-value">$80.9B</div>
+            <div class="market-bar" style="height:95%;background:linear-gradient(180deg, #33e0ff, var(--color-primary-dim));"></div>
+            <div class="market-bar-label">Wi-Fi Chips 2030</div>
+          </div>
+          <div class="market-bar-col">
+            <div class="market-bar-value">$22.9B</div>
+            <div class="market-bar" style="height:28%;background:linear-gradient(180deg, var(--color-accent-2), #6b21a8);"></div>
+            <div class="market-bar-label">Wi-Fi 7 2030</div>
+          </div>
+          <div class="market-bar-col">
+            <div class="market-bar-value">$1.5B</div>
+            <div class="market-bar" style="height:5%;min-height:16px;background:linear-gradient(180deg, var(--color-gold), #b8860b);"></div>
+            <div class="market-bar-label">MEGAX Target 2031</div>
+          </div>
+        </div>
+
+        <div style="margin-top:var(--space-2xl);">
+          <p class="overline reveal" style="margin-bottom:var(--space-lg);">Go-To-Market Channels</p>
+          <div class="channel-strip reveal-scale">
+            <div class="channel-item">
+              <h4>Telecom Operators</h4>
+              <p>Smart city & 5G IoT deployments via operator partnerships</p>
+            </div>
+            <div class="channel-item">
+              <h4>Consumer OEMs</h4>
+              <p>Smart home, TV, tablet & wearable device integration</p>
+            </div>
+            <div class="channel-item">
+              <h4>Enterprise Networks</h4>
+              <p>High-performance routers & private 5G infrastructure</p>
+            </div>
+            <div class="channel-item">
+              <h4>Industrial Leaders</h4>
+              <p>Manufacturing automation, robotics & industrial IoT</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ROADMAP ===== -->
+    <section id="roadmap">
+      <div class="container">
+        <div class="reveal" style="max-width:600px;margin-bottom:var(--space-xl);">
+          <p class="overline">Execution Roadmap</p>
+          <h2 style="margin-top:var(--space-md);">From Silicon to Scale</h2>
+          <p class="text-muted" style="margin-top:var(--space-md);">
+            A disciplined six-year plan moving from MPW validation to mass production across all product lines — with break-even projected by 2028.
+          </p>
+        </div>
+        <div class="timeline stagger">
+          <div class="timeline-item reveal">
+            <div class="timeline-year">Q1–Q2 2026</div>
+            <h4>Production Ignition</h4>
+            <p>Wi-Fi 6 SoC enters mass production on GlobalFoundries 22nm. HaLow G-Link and Freya Transceiver complete design optimization. Engineering teams for Wi-Fi 7 programs onboarded.</p>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-year">Q3–Q4 2026</div>
+            <h4>First Revenue Milestones</h4>
+            <p>HaLow G-Link and Freya Transceiver begin mass production on TSMC nodes. First commercial revenue from HaLow deployments. FCC/CE/SRRC certifications filed. Strategic customer MoUs convert to purchase orders.</p>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-year">2027</div>
+            <h4>Wi-Fi 7 Silicon Arrives</h4>
+            <p>Wi-Fi 7 4×4 AP Baseband and 2×2 AP SoC reach mass production. Robotic Joint Neural Network module sales begin. Revenue ramp across all active product lines.</p>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-year">2028</div>
+            <h4>Break-Even &amp; Scale</h4>
+            <p>Company reaches profitability. Robotic neural network transitions from module to chip sales. Full six-product portfolio generating revenue at scale. Base-case revenue projection: ~$85M.</p>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-year">2029–2031</div>
+            <h4>Global Expansion</h4>
+            <p>Accelerated market penetration across consumer, enterprise, and industrial verticals. Revenue scales toward $1.5B target by 2031, positioning Mega X as a top-tier wireless chipset company globally.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== COMPETITIVE EDGE ===== -->
+    <section style="background:var(--color-surface);">
+      <div class="container">
+        <div class="reveal" style="text-align:center;max-width:650px;margin:0 auto var(--space-xl);">
+          <p class="overline" style="justify-content:center;">Competitive Advantages</p>
+          <h2 style="margin-top:var(--space-md);">Why Mega X Wins</h2>
+        </div>
+        <div class="grid grid-3 gap-lg stagger">
+          <div class="card reveal">
+            <div class="card-number">01</div>
+            <h4>Full-Spectrum Portfolio</h4>
+            <p class="text-muted" style="font-size:var(--text-sm);">The only provider offering HaLow, Wi-Fi 6/7, and 5G-NR RF transceivers from a single design team — reducing integration complexity for customers.</p>
+          </div>
+          <div class="card reveal">
+            <div class="card-number">02</div>
+            <h4>Dual-Foundry Strategy</h4>
+            <p class="text-muted" style="font-size:var(--text-sm);">Partnerships with both TSMC and GlobalFoundries at 22–40nm nodes eliminate single-supplier risk and ensure capacity resilience.</p>
+          </div>
+          <div class="card reveal">
+            <div class="card-number">03</div>
+            <h4>IP Licensing Upside</h4>
+            <p class="text-muted" style="font-size:var(--text-sm);">Wi-Fi 6 SoC generates both chip revenue and a recurring royalty stream — $4M licensing fee plus $0.12 per-chip royalty on every unit shipped.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta-section">
+      <div class="container reveal">
+        <p class="overline" style="justify-content:center;margin-bottom:var(--space-md);">Get In Touch</p>
+        <h2>Ready to Build the Future<br>of Connectivity?</h2>
+        <p>Whether you're an investor, OEM partner, or enterprise customer — we'd like to hear from you.</p>
+        <div class="flex gap-md" style="justify-content:center;flex-wrap:wrap;">
+          <a href="contact.html" class="btn btn-primary">Contact Our Team →</a>
+          <a href="about.html" class="btn btn-outline">Learn More About Us</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">MEGA<span class="logo-x">X</span></a>
+          <p>Next-generation semiconductor solutions powering secure, scalable connectivity for the global IoT ecosystem.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="about.html#leadership">Leadership</a></li>
+            <li><a href="about.html#careers">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Products</h5>
+          <ul>
+            <li><a href="#portfolio">Wi-Fi HaLow</a></li>
+            <li><a href="#portfolio">Wi-Fi 6/7 SoC</a></li>
+            <li><a href="#portfolio">Freya Transceiver</a></li>
+            <li><a href="#portfolio">Edge AI</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Connect</h5>
+          <ul>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html">Investor Relations</a></li>
+            <li><a href="contact.html">Press</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Mega X Holding Ltd. All rights reserved.</span>
+        <span>Fabless Semiconductor · Global Operations</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to top -->
+  <button class="scroll-top" aria-label="Scroll to top">↑</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
