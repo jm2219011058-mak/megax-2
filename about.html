@@ -35,59 +35,122 @@
       background: var(--color-surface);
       border: 1px solid var(--color-border);
       padding: var(--space-xl);
-      font-family: var(--font-mono);
-      font-size: var(--text-sm);
       color: var(--color-text-muted);
-      line-height: 2;
+      line-height: 1.8;
       position: relative;
     }
     .mission-visual .highlight {
       color: var(--color-primary);
       font-weight: 600;
     }
+    .mission-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+      line-height: 1.9;
+    }
+    .mission-list li {
+      position: relative;
+      padding-left: 1.75rem;
+      margin-bottom: var(--space-md);
+    }
+    .mission-list li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--color-primary);
+      font-size: var(--text-base);
+      line-height: 1;
+      top: 0.15rem;
+    }
     @media (max-width: 768px) {
       .mission-grid { grid-template-columns: 1fr; }
     }
 
     /* Leadership */
-    .leader-grid {
+    .leader-group {
+      margin-bottom: var(--space-2xl);
+    }
+    .leader-group h3 {
+      margin-bottom: var(--space-lg);
+      color: var(--color-primary);
+      font-size: var(--text-xl);
+      letter-spacing: 0.04em;
+    }
+    .team-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: var(--space-lg);
     }
-    .leader-card {
+    .team-grid.founding {
+      grid-template-columns: repeat(3, minmax(240px, 1fr));
+    }
+    .team-grid.advisors {
+      grid-template-columns: repeat(4, minmax(200px, 1fr));
+    }
+    .team-card {
       background: var(--color-surface);
       border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg);
       padding: var(--space-xl);
-      transition: border-color 0.3s var(--ease-out);
-    }
-    .leader-card:hover { border-color: var(--color-primary-dim); }
-    .leader-initials {
-      width: 56px;
-      height: 56px;
-      background: var(--color-surface-2);
-      border: 1px solid var(--color-primary-dim);
+      transition: border-color 0.3s var(--ease-out), transform 0.3s var(--ease-out);
       display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: var(--text-lg);
-      color: var(--color-primary);
-      margin-bottom: var(--space-md);
+      flex-direction: column;
+      align-items: flex-start;
     }
-    .leader-card h4 { font-size: var(--text-base); margin-bottom: 4px; }
-    .leader-role {
+    .team-card:hover {
+      border-color: var(--color-primary-dim);
+      transform: translateY(-2px);
+    }
+    .team-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 999px;
+      object-fit: cover;
+      margin-bottom: var(--space-md);
+      flex-shrink: 0;
+    }
+    .team-avatar.small {
+      width: 80px;
+      height: 80px;
+    }
+    .team-name {
+      margin: 0 0 0.5rem;
+      font-size: var(--text-lg);
+      color: var(--color-text);
+      line-height: 1.2;
+    }
+    .team-position {
       font-family: var(--font-mono);
       font-size: var(--text-xs);
       color: var(--color-primary);
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       margin-bottom: var(--space-md);
     }
-    .leader-card p {
-      font-size: var(--text-sm);
+    .team-bio {
+      margin: 0;
       color: var(--color-text-muted);
+      font-size: var(--text-sm);
+      line-height: 1.8;
+    }
+    .team-card.small {
+      padding: var(--space-lg);
+    }
+    @media (max-width: 1040px) {
+      .team-grid.founding {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+      }
+      .team-grid.advisors {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+      }
+    }
+    @media (max-width: 720px) {
+      .team-grid.founding,
+      .team-grid.advisors {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* Values */
@@ -187,15 +250,12 @@
           </p>
         </div>
         <div class="mission-visual reveal-right">
-          <div style="margin-bottom:var(--space-md);color:var(--color-primary);font-weight:600;">// technology_stack.conf</div>
-          <span class="highlight">RF_BANDS</span>      = [ &lt;1GHz, 2.4G, 5G, 6G, 5G-NR ]<br>
-          <span class="highlight">PROCESS</span>       = [ TSMC_40nm, TSMC_28nm, GF_22nm ]<br>
-          <span class="highlight">ARCHITECTURE</span>  = SDR_PROGRAMMABLE<br>
-          <span class="highlight">SECURITY</span>      = PUF_HARDWARE_ROOT<br>
-          <span class="highlight">AI_ENGINE</span>     = EDGE_NEURAL_INFERENCE<br>
-          <span class="highlight">PRODUCT_LINES</span> = 6<br>
-          <span class="highlight">TARGET_2031</span>   = $1.5B_REVENUE<br>
-          <span class="highlight">STATUS</span>        = <span style="color:var(--color-gold);">ACTIVE</span>
+          <div style="margin-bottom:var(--space-md);color:var(--color-primary);font-weight:600;">Our approach</div>
+          <ul class="mission-list">
+            <li>Hardware-first RF and SoC design for modern wireless systems.</li>
+            <li>Secure edge intelligence built into every product stage.</li>
+            <li>Global semiconductor expertise from architecture to manufacturing.</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -209,42 +269,112 @@
           <p class="overline">Leadership</p>
           <h2 style="margin-top:var(--space-md);">Executive Team</h2>
         </div>
-        <div class="leader-grid stagger">
-          <div class="leader-card reveal">
-            <div class="leader-initials">ZJ</div>
-            <h4>Zhiyong Jiang</h4>
-            <div class="leader-role">Chief Executive Officer</div>
-            <p>Embedded systems architect with deep expertise in large-scale IT infrastructure and ecosystem leadership. Drives Mega X's strategic vision and investor relations.</p>
+
+        <div class="leader-group">
+          <h3>Founding Team</h3>
+          <div class="team-grid founding stagger">
+            <article class="team-card reveal">
+              <img class="team-avatar" src="assets/team/anjum-malik.png" alt="Mr. Anjum Malik">
+              <h4 class="team-name">Mr. Anjum Malik</h4>
+              <div class="team-position">Founder & Chairman</div>
+              <p class="team-bio">150+ years of construction & engineering heritage. Founded Manhattan X Holding to build the foundational infrastructure for the intelligent era.</p>
+            </article>
+            <article class="team-card reveal">
+              <img class="team-avatar" src="assets/team/faiqa-islam.png" alt="Ms. Faiqa Islam">
+              <h4 class="team-name">Ms. Faiqa Islam</h4>
+              <div class="team-position">CoFounder & CIO</div>
+              <p class="team-bio">Former Intel leader. Orchestrates cross-border investment flows across the Gulf and Asia. Founder of EliteIkon Global with 10,000+ investors per year.</p>
+            </article>
+            <article class="team-card reveal">
+              <img class="team-avatar" src="assets/team/jamie-zhang.png" alt="Ms. Jamie Zhang">
+              <h4 class="team-name">Ms. Jamie Zhang</h4>
+              <div class="team-position">CoFounder & Executive Director</div>
+              <p class="team-bio">MIT graduate, former McKinsey Senior Engagement Manager. Co-founded Masdar Investment LLC with Oman Royal Families. Founded IRX Fin with RMB 10B in angel funding.</p>
+            </article>
+            <article class="team-card reveal">
+              <img class="team-avatar" src="assets/team/zhiyong-jiang.png" alt="Mr. Zhiyong Jiang">
+              <h4 class="team-name">Mr. Zhiyong Jiang</h4>
+              <div class="team-position">CoFounder & CEO</div>
+              <p class="team-bio">25+ years in semiconductors & robotics. Director of China National Software & IC Platform. Co-founder of Perfconn (Top 3 global Wi-Fi chip company).</p>
+            </article>
+            <article class="team-card reveal">
+              <img class="team-avatar" src="assets/team/kevin-steptoe.png" alt="Dr. Kevin John Steptoe">
+              <h4 class="team-name">Dr. Kevin John Steptoe</h4>
+              <div class="team-position">CoFounder & CTO</div>
+              <p class="team-bio">20+ years in SoC design (28nm/16nm/12nm). Former CEO of Marvell. Deep expertise in storage, networking, and AI chip design.</p>
+            </article>
+            <article class="team-card reveal">
+              <img class="team-avatar" src="assets/team/rebecca-qiu.png" alt="Ms. Rebecca Qiu">
+              <h4 class="team-name">Ms. Rebecca Qiu</h4>
+              <div class="team-position">CoFounder & MD, Global Strategic Investments</div>
+              <p class="team-bio">Directed $5B+ into 100+ enterprises. Investment Partner at SVB Capital. Founder of China SME Venture Capital Fund.</p>
+            </article>
           </div>
-          <div class="leader-card reveal">
-            <div class="leader-initials">COO</div>
-            <h4>Chief Operating Officer</h4>
-            <div class="leader-role">R&D & Operations</div>
-            <p>Veteran semiconductor operations leader with experience managing large-scale SoC development programs from design through mass production.</p>
-          </div>
-          <div class="leader-card reveal">
-            <div class="leader-initials">DCE</div>
-            <h4>Director of Chip Engineering</h4>
-            <div class="leader-role">Design Leadership</div>
-            <p>Specialist in Wi-Fi chipset R&D and mass production processes, overseeing the complete design-to-silicon pipeline across all product lines.</p>
-          </div>
-          <div class="leader-card reveal">
-            <div class="leader-initials">DMS</div>
-            <h4>Director of Manufacturing</h4>
-            <div class="leader-role">Supply Chain</div>
-            <p>International electronics manufacturing expert with extensive experience in RF test, packaging operations, and foundry relationship management.</p>
-          </div>
-          <div class="leader-card reveal">
-            <div class="leader-initials">WSA</div>
-            <h4>Wi-Fi System Architect</h4>
-            <div class="leader-role">System Architecture</div>
-            <p>Wi-Fi chip system architecture lead with a proven track record in high-volume commercial chip development and deployment.</p>
-          </div>
-          <div class="leader-card reveal">
-            <div class="leader-initials">RAD</div>
-            <h4>RF & Analog Design Lead</h4>
-            <div class="leader-role">RF Engineering</div>
-            <p>High-end cellular and Wi-Fi RF design specialist responsible for the analog front-end across the full-band product portfolio.</p>
+        </div>
+
+        <div class="leader-group">
+          <h3>Advisors & Engineering Leaders</h3>
+          <div class="team-grid advisors stagger">
+            <article class="team-card small reveal">
+              <img class="team-avatar small" src="assets/team/roy-jewell.png" alt="Mr. Roy E. Jewell">
+              <h4 class="team-name">Mr. Roy E. Jewell</h4>
+              <div class="team-position">Chief Advisor</div>
+              <p class="team-bio">30+ years in semiconductor & EDA. Former TI. Led two EDA companies to Nasdaq IPOs.</p>
+            </article>
+            <article class="team-card small reveal">
+              <img class="team-avatar small" src="assets/team/mingxian-feng.jpeg" alt="Dr. Mingxian Feng">
+              <h4 class="team-name">Dr. Mingxian Feng</h4>
+              <div class="team-position">Chief Advisor, Former TSMC Chairman</div>
+              <p class="team-bio">"Father of Semiconductors in Asia." Contributed to founding 20 semiconductor companies.</p>
+            </article>
+            <article class="team-card small reveal">
+              <img class="team-avatar small" src="assets/team/jade.png" alt="Mr. Jade">
+              <h4 class="team-name">Mr. Jade</h4>
+              <div class="team-position">Director of Chip Engineering</div>
+              <p class="team-bio">Led silicon development at Nokia, Apple, Microsoft, AWS. RF products with 100M+ unit shipments.</p>
+            </article>
+            <article class="team-card small reveal">
+              <img class="team-avatar small" src="assets/team/cao-xuguang.png" alt="Mr. Cao Xuguang">
+              <h4 class="team-name">Mr. Cao Xuguang</h4>
+              <div class="team-position">RF System Design Expert</div>
+              <p class="team-bio">20+ years at Nokia, Huawei, Ericsson. RF designs deployed in hundreds of millions of devices.</p>
+            </article>
+            <article class="team-card small reveal">
+              <img class="team-avatar small" src="assets/team/dr-z.png" alt="Dr. Z">
+              <h4 class="team-name">Dr. Z</h4>
+              <div class="team-position">Wi-Fi System Architecture & R&D</div>
+              <p class="team-bio">Former HiSilicon. Wi-Fi AP chips with 100M+ unit shipments. 15+ years in wireless connectivity.</p>
+            </article>
+            <article class="team-card small reveal">
+              <img class="team-avatar small" src="assets/team/dr-han.png" alt="Dr. Han">
+              <h4 class="team-name">Dr. Han</h4>
+              <div class="team-position">RF and Analog Chip Design</div>
+              <p class="team-bio">Former CEO/CTO of FCI (Silicon Motion). Co-founded RF Solutions Inc., acquired by Skyworks.</p>
+            </article>
+            <article class="team-card small reveal">
+              <img class="team-avatar small" src="assets/team/john-long.png" alt="John Long">
+              <h4 class="team-name">John Long</h4>
+              <div class="team-position">Director of Manufacturing & Supply Chain</div>
+              <p class="team-bio">Former Motorola RF Engineer, Delphi Plant Manager. Extensive international manufacturing experience.</p>
+            </article>
+            <article class="team-card small reveal">
+              <img class="team-avatar small" src="assets/team/robert-young.png" alt="Robert Young">
+              <h4 class="team-name">Robert Young</h4>
+              <div class="team-position">CTO, Architecture Design</div>
+              <p class="team-bio">Cambridge/CSR background. Developed world's first CMOS Bluetooth chip (2B+ units sold, acquired by Qualcomm).</p>
+            </article>
+            <article class="team-card small reveal">
+              <img class="team-avatar small" src="assets/team/jonathan-kimmitt.png" alt="Jonathan Kimmitt">
+              <h4 class="team-name">Jonathan Kimmitt</h4>
+              <div class="team-position">Digital Director</div>
+              <p class="team-bio">Processor design and FPGA verification. Core team from Cambridge/CSR and Texas Instruments.</p>
+            </article>
+            <article class="team-card small reveal">
+              <img class="team-avatar small" src="assets/team/nicky-wilkinson.png" alt="Nicky Wilkinson">
+              <h4 class="team-name">Nicky Wilkinson</h4>
+              <div class="team-position">Chief RF Expert</div>
+              <p class="team-bio">30+ years in RF and MIMO. Co-founded Neul (NB-IoT standard, acquired by Huawei).</p>
+            </article>
           </div>
         </div>
       </div>

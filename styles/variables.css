@@ -14,19 +14,41 @@
   --text-3xl: clamp(2.4rem, 1.6rem + 3.5vw, 4.2rem);
   --text-hero: clamp(2.8rem, 1.8rem + 5vw, 6.5rem);
 
-  /* Colors — deep space tech palette */
-  --color-bg: #08090C;
-  --color-surface: #0E1016;
-  --color-surface-2: #161820;
-  --color-primary: #C8A84E;
-  --color-primary-dim: #8B6914;
-  --color-accent: #DBBF6A;
-  --color-accent-2: #F0DFA0;
-  --color-gold: #C8A84E;
-  --color-text: #F0E6D0;
-  --color-text-muted: #6B6055;
-  --color-border: rgba(200, 168, 78, 0.12);
-  --color-glow: rgba(200, 168, 78, 0.15);
+  /* Colors — Dynasty + Electric palette */
+  --color-bg: #08080F;
+  --color-surface: #0E0E18;
+  --color-surface-2: #16162A;
+  --color-surface-3: #1E1E34;
+  --color-hover: #282848;
+
+  /* Dynasty gold */
+  --color-primary: #D4AA4C;
+  --color-primary-dim: #7A6028;
+  --color-primary-muted: #2A200C;
+  --color-accent: #E8C870;
+  --color-accent-2: #F0E0A0;
+  --color-gold: #D4AA4C;
+
+  /* Division tints */
+  --color-ai: #8878A8;
+  --color-ai-dim: #3A2858;
+  --color-fusion: #C07038;
+  --color-fusion-dim: #3A1808;
+
+  /* Spark colors — for data, active states, live indicators */
+  --color-spark-mint: #50E8C0;
+  --color-spark-blue: #70A0FF;
+  --color-spark-flare: #F0B050;
+
+  /* Text */
+  --color-text: #E8DCC8;
+  --color-text-muted: #5A5870;
+  --color-text-body: #8A88A0;
+
+  /* Borders */
+  --color-border: rgba(212, 170, 76, 0.1);
+  --color-border-solid: #2A2438;
+  --color-glow: rgba(212, 170, 76, 0.12);
 
   /* Spacing */
   --space-xs: 0.25rem;

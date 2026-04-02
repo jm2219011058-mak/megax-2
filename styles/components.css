@@ -9,7 +9,7 @@
   transition: background 0.4s var(--ease-out), padding 0.4s var(--ease-out);
 }
 .nav.scrolled {
-  background: rgba(5, 8, 15, 0.92);
+  background: rgba(8, 8, 15, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--color-border);
@@ -134,9 +134,9 @@
   color: var(--color-bg);
 }
 .btn-primary:hover {
-  background: #33e0ff;
+  background: var(--color-primary);
   color: var(--color-bg);
-  box-shadow: 0 0 40px rgba(0, 212, 255, 0.3);
+  box-shadow: 0 0 30px rgba(212, 170, 76, 0.25);
   transform: translateY(-1px);
 }
 .btn-outline {
@@ -152,7 +152,7 @@
 /* ========== CARDS ========== */
 .card {
   background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-border-solid);
   padding: var(--space-xl);
   position: relative;
   overflow: hidden;
@@ -180,6 +180,16 @@
   font-size: var(--text-xs);
   color: var(--color-primary-dim);
   margin-bottom: var(--space-md);
+}
+.product-meta::before {
+  content: '•';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--color-spark-mint);
+  border-radius: 50%;
+  margin-right: 0.75rem;
+  vertical-align: middle;
 }
 .card h4 { margin-bottom: var(--space-md); }
 
@@ -227,7 +237,7 @@
 
 /* ========== FOOTER ========== */
 footer {
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-border-solid);
   padding: var(--space-xl) 0 var(--space-lg);
   background: var(--color-bg);
 }
@@ -263,7 +273,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   padding-top: var(--space-lg);
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-border-solid);
   font-family: var(--font-mono);
   font-size: var(--text-xs);
   color: var(--color-text-muted);
