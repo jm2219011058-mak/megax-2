@@ -46,7 +46,7 @@
   font-size: var(--text-xs);
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--color-text-muted);
+  color: #fff;
   position: relative;
   padding: var(--space-xs) 0;
 }
@@ -60,7 +60,7 @@
   background: var(--color-primary);
   transition: width 0.35s var(--ease-out);
 }
-.nav-links a:hover { color: var(--color-text); }
+.nav-links a:hover { color: #fff; }
 .nav-links a:hover::after { width: 100%; }
 
 /* Hamburger */
@@ -82,8 +82,16 @@
   transition: all 0.3s var(--ease-out);
 }
 .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-.nav-toggle.active span:nth-child(2) { opacity: 0; }
+..nav-toggle.active span:nth-child(2) { opacity: 0; }
 .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+.hero h1,
+.hero-sub,
+.page-hero h1,
+.page-hero .hero-content p,
+.page-hero p {
+  color: #fff;
+}
 
 /* Mobile Menu */
 .mobile-menu {

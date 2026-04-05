@@ -14,26 +14,39 @@
   --text-3xl: clamp(2.4rem, 1.6rem + 3.5vw, 4.2rem);
   --text-hero: clamp(2.8rem, 1.8rem + 5vw, 6.5rem);
 
-  /* Colors — Dynasty + Electric palette */
-  --color-bg: #08080F;
-  --color-surface: #0E0E18;
-  --color-surface-2: #16162A;
-  --color-surface-3: #1E1E34;
-  --color-hover: #282848;
+  /* Colors — Unified Mega X palette */
+  --color-bg: #07090F;
+  --color-surface: #0D1119;
+  --color-surface-2: #151B28;
+  --color-surface-3: #1E2838;
+  --color-hover: #1E2838;
 
-  /* Dynasty gold */
-  --color-primary: #D4AA4C;
-  --color-primary-dim: #7A6028;
-  --color-primary-muted: #2A200C;
-  --color-accent: #E8C870;
-  --color-accent-2: #F0E0A0;
-  --color-gold: #D4AA4C;
+  /* Text */
+  --color-text: #E8DCC8;
+  --color-heading: #E8DCC8;
+  --color-text-muted: #788498;
+  --color-text-body: #788498;
+
+  /* Primary gold */
+  --color-primary: #D4A84E;
+  --color-primary-dim: #8A6A18;
+  --color-primary-muted: #2A2010;
+  --color-accent: #E8C05A;
+  --color-accent-2: #F5DFA0;
+  --color-gold: #D4A84E;
+  --color-gold-20: rgba(212, 168, 78, 0.2);
 
   /* Division tints */
-  --color-ai: #8878A8;
-  --color-ai-dim: #3A2858;
-  --color-fusion: #C07038;
-  --color-fusion-dim: #3A1808;
+  --color-wifi: #D4A84E;
+  --color-ai: #B8B0C8;
+  --color-ai-dim: #4B4A5F;
+  --color-fusion: #E8884A;
+  --color-fusion-dim: #4A2610;
+
+  /* Borders & UI */
+  --color-border: #1E2838;
+  --color-border-solid: rgba(30, 40, 56, 0.9);
+  --color-glow: rgba(212, 168, 78, 0.12);
 
   /* Spark colors — for data, active states, live indicators */
   --color-spark-mint: #50E8C0;
