@@ -1,7 +1,7 @@
 :root {
-  /* Typography */
-  --font-display: 'Exo 2', sans-serif;
-  --font-body: 'Outfit', sans-serif;
+  /* Typography — Unified: Instrument Serif + Barlow */
+  --font-display: 'Instrument Serif', serif;
+  --font-body: 'Barlow', sans-serif;
   --font-mono: 'Share Tech Mono', monospace;
 
   /* Type scale */
@@ -44,24 +44,14 @@
   --color-fusion-dim: #4A2610;
 
   /* Borders & UI */
-  --color-border: #1E2838;
-  --color-border-solid: rgba(30, 40, 56, 0.9);
-  --color-glow: rgba(212, 168, 78, 0.12);
-
-  /* Spark colors — for data, active states, live indicators */
-  --color-spark-mint: #50E8C0;
-  --color-spark-blue: #70A0FF;
-  --color-spark-flare: #F0B050;
-
-  /* Text */
-  --color-text: #E8DCC8;
-  --color-text-muted: #5A5870;
-  --color-text-body: #8A88A0;
-
-  /* Borders */
   --color-border: rgba(212, 170, 76, 0.1);
   --color-border-solid: #2A2438;
   --color-glow: rgba(212, 170, 76, 0.12);
+
+  /* Spark colors */
+  --color-spark-mint: #50E8C0;
+  --color-spark-blue: #70A0FF;
+  --color-spark-flare: #F0B050;
 
   /* Spacing */
   --space-xs: 0.25rem;
@@ -75,8 +65,18 @@
   --max-width: 1200px;
   --border-radius: 2px;
   --border-radius-lg: 6px;
+  --radius-glass: 20px;
+  --radius-pill: 9999px;
 
   /* Transitions */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* Glass tokens */
+  --glass-bg: rgba(255, 255, 255, 0.02);
+  --glass-bg-hover: rgba(255, 255, 255, 0.045);
+  --glass-blur: blur(16px) saturate(1.4);
+  --glass-border-light: rgba(255, 255, 255, 0.1);
+  --glass-border-dim: rgba(255, 255, 255, 0.04);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
