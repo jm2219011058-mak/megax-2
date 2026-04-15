@@ -517,6 +517,96 @@
     .scroll-top{position:fixed;bottom:var(--space-lg);right:var(--space-lg);width:44px;height:44px;background:var(--color-surface);border:1px solid var(--color-border);color:var(--color-primary);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;pointer-events:none;transition:opacity 0.3s,border-color 0.3s;z-index:50;font-size:1.2rem}
     .scroll-top.visible{opacity:1;pointer-events:auto}
     .scroll-top:hover{border-color:var(--color-primary)}
+
+    /* ===== Mobile Responsive Fixes ===== */
+    @media (max-width: 768px) {
+      /* Hide decorative <br> tags on mobile */
+      .hero-epigraph br,
+      .philosophy-text h2 br,
+      .closing h2 br,
+      .pillar h3 br {
+        display: none;
+      }
+
+      /* Reset Section II right-alignment on mobile */
+      .philosophy-text[style*="text-align:right"],
+      .philosophy-text[style*="text-align: right"] {
+        text-align: left !important;
+      }
+      .philosophy-text[style*="text-align:right"] .overline-glass,
+      .philosophy-text[style*="text-align: right"] .overline-glass,
+      .philosophy-text[style*="text-align:right"] h2,
+      .philosophy-text[style*="text-align: right"] h2,
+      .philosophy-text[style*="text-align:right"] .thin-rule,
+      .philosophy-text[style*="text-align: right"] .thin-rule,
+      .philosophy-text[style*="text-align:right"] p,
+      .philosophy-text[style*="text-align: right"] p {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+      }
+
+      /* Reduce section padding on mobile */
+      .section-philosophy {
+        padding: clamp(3.5rem, 8vh, 6rem) 0;
+      }
+
+      /* Reduce illus-frame height on mobile */
+      .illus-frame {
+        min-height: 240px;
+        aspect-ratio: 16/10;
+      }
+
+      /* Pillar cards: widen text on single column */
+      .pillar p {
+        max-width: 100%;
+      }
+      .pillar {
+        padding: 2rem 1.5rem;
+      }
+
+      /* Closing section: less padding on mobile */
+      .closing {
+        padding: clamp(3.5rem, 10vh, 6rem) var(--space-md);
+      }
+
+      /* Hero adjustments */
+      .hero-headline {
+        font-size: clamp(3.2rem, 12vw, 5rem);
+      }
+      .hero-epigraph {
+        font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+        letter-spacing: 0.04em;
+        line-height: 1.7;
+      }
+      .hero-inner {
+        padding: 0 var(--space-md);
+      }
+
+      /* Closing CTA: slightly smaller on mobile */
+      .closing-cta-glass {
+        padding: 0.85rem 2rem;
+        font-size: 0.65rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      /* Extra small screens */
+      .hero-headline {
+        font-size: clamp(2.6rem, 14vw, 3.5rem);
+      }
+      .philosophy-text h2 {
+        font-size: clamp(1.8rem, 6vw, 2.4rem);
+      }
+      .section-philosophy {
+        padding: 3rem 0;
+      }
+      .illus-frame {
+        min-height: 200px;
+      }
+      .closing h2 {
+        font-size: clamp(1.5rem, 5vw, 2rem);
+      }
+    }
   </style>
 </head>
 <body class="home-page">
