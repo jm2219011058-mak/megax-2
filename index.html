@@ -32,6 +32,35 @@
       letter-spacing: -0.01em;
     }
 
+    /* ===== Ambient gradient utilities ===== */
+    @keyframes orbDrift {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(4%, -5%) scale(1.06); }
+      66% { transform: translate(-3%, 3%) scale(0.96); }
+    }
+    @keyframes orbDrift2 {
+      0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+      50% { transform: translate(-5%, 2%) rotate(8deg) scale(1.1); }
+    }
+    @keyframes orbPulse {
+      0%, 100% { opacity: 0.55; }
+      50% { opacity: 1; }
+    }
+    .home-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      will-change: transform;
+    }
+    .home-ambient {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
     /* ===== Video Hero ===== */
     .hero-cinematic {
       position: relative;
@@ -84,15 +113,71 @@
     .hero-epigraph {
       font-family: var(--font-body);
       font-weight: 300;
-      font-size: clamp(1rem, 1.4vw, 1.3rem);
-      color: rgba(255, 255, 255, 0.55);
-      letter-spacing: 0.08em;
-      line-height: 1.8;
-      max-width: 48ch;
-      margin: 0 auto;
+      font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+      color: rgba(255, 255, 255, 0.8);
+      letter-spacing: 0.06em;
+      line-height: 1.7;
+      max-width: 42ch;
+      margin: 0 auto var(--space-xl);
       opacity: 0;
       transform: translateY(14px);
       animation: heroReveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) 1.1s forwards;
+    }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 36px;
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 9999px;
+      background: rgba(212, 168, 78, 0.14);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow:
+        inset 0 1px 1px rgba(255,255,255,0.14),
+        0 6px 24px rgba(212, 168, 78, 0.12);
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: heroReveal 1s cubic-bezier(0.22, 1, 0.36, 1) 1.5s forwards;
+      transition: all 0.4s var(--ease-out);
+    }
+    .hero-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(180deg,
+        rgba(212,168,78,0.55) 0%,
+        rgba(212,168,78,0.1) 50%,
+        rgba(212,168,78,0.25) 100%
+      );
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+    .hero-cta:hover {
+      background: rgba(212, 168, 78, 0.28);
+      box-shadow:
+        inset 0 1px 1px rgba(255,255,255,0.2),
+        0 10px 40px rgba(212, 168, 78, 0.22);
+      transform: translateY(-2px);
+      color: #fff;
+    }
+    .hero-cta .cta-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      box-shadow: 0 0 12px var(--color-primary);
     }
     .hero-scroll-hint {
       position: absolute;
@@ -284,10 +369,51 @@
     .section-philosophy {
       padding: clamp(6rem, 12vh, 10rem) 0;
       position: relative;
+      overflow: hidden;
+    }
+
+    /* Glass text panel */
+    .philosophy-glass {
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(20px) saturate(1.3);
+      -webkit-backdrop-filter: blur(20px) saturate(1.3);
+      border-radius: 24px;
+      padding: clamp(2.2rem, 4vw, 3.2rem) clamp(2rem, 3.5vw, 2.8rem);
+      position: relative;
+      overflow: hidden;
+      box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.1),
+        inset 0 -0.5px 0.5px rgba(255, 255, 255, 0.03),
+        0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+    .philosophy-glass::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(180deg,
+        rgba(255,255,255,0.2) 0%,
+        rgba(255,255,255,0.04) 30%,
+        rgba(255,255,255,0) 55%,
+        rgba(212,168,78,0.08) 100%
+      );
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
     }
 
     .philosophy-text {
-      max-width: 640px;
+      max-width: 580px;
+    }
+    .philosophy-text .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--color-primary-dim);
+      margin-bottom: var(--space-lg);
     }
     .philosophy-text h2 {
       font-size: clamp(2rem, 3.5vw, 3.6rem);
@@ -302,10 +428,19 @@
     .philosophy-text p {
       font-family: var(--font-body);
       font-weight: 300;
-      font-size: var(--text-lg);
+      font-size: var(--text-base);
       color: var(--color-text-muted);
-      line-height: 1.8;
-      max-width: 50ch;
+      line-height: 1.75;
+      max-width: 36ch;
+    }
+    .philosophy-text .accent-line {
+      display: block;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: var(--text-lg);
+      color: var(--color-primary);
+      margin-top: var(--space-lg);
+      line-height: 1.4;
     }
 
     /* Philosophy split layout */
@@ -356,54 +491,9 @@
       .philosophy-split-reverse .philosophy-illus {
         order: -1;
       }
-    }
-
-    /* Thin divider */
-    .thin-rule {
-      width: 60px;
-      height: 1px;
-      background: var(--color-primary-dim);
-      margin: var(--space-xl) 0;
-    }
-
-    /* Glass overline badge */
-    .overline-glass {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 6px 18px 6px 14px;
-      border-radius: 9999px;
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.08),
-        0 2px 8px rgba(0,0,0,0.15);
-      position: relative;
-      overflow: hidden;
-      margin-bottom: var(--space-lg);
-    }
-    .overline-glass::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      padding: 0.8px;
-      background: linear-gradient(180deg,
-        rgba(255,255,255,0.2) 0%,
-        rgba(255,255,255,0) 50%,
-        rgba(255,255,255,0.05) 100%
-      );
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events: none;
-    }
-    .overline-glass .overline {
-      margin-bottom: 0;
-    }
-    .overline-glass .overline::before {
-      display: none;
+      .philosophy-glass {
+        padding: 1.8rem 1.6rem;
+      }
     }
 
     /* ===== Pillars ===== */
@@ -641,6 +731,7 @@
       <div class="hero-inner">
         <h1 class="hero-headline">Know It All</h1>
         <p class="hero-epigraph">Where AI builds departments, forges worlds,<br>and commands the infrastructure beneath them all.</p>
+        <a href="#main-pillars" class="hero-cta"><span class="cta-dot"></span>Explore Our Divisions</a>
       </div>
       <div class="hero-scroll-hint">
         <span>Scroll</span>
@@ -650,12 +741,16 @@
 
     <!-- ===== SECTION I: The Productivity Paradigm Shift ===== -->
     <section class="section-philosophy">
-      <div class="container philosophy-split">
-        <div class="philosophy-text reveal">
-          <div class="overline-glass"><p class="overline">I</p></div>
+      <div class="home-ambient" aria-hidden="true">
+        <div class="home-orb" style="width:500px;height:500px;top:-10%;right:-8%;background:radial-gradient(circle,rgba(212,168,78,0.08),transparent 65%);animation:orbDrift 20s ease-in-out infinite;"></div>
+        <div class="home-orb" style="width:350px;height:350px;bottom:5%;left:-6%;background:radial-gradient(circle,rgba(180,140,60,0.06),transparent 60%);animation:orbDrift2 16s ease-in-out infinite;"></div>
+      </div>
+      <div class="container philosophy-split" style="position:relative;z-index:1;">
+        <div class="philosophy-text philosophy-glass reveal">
+          <div class="section-label">I · Autonomy</div>
           <h2>Departments are<br>the new <em>software</em>.</h2>
-          <div class="thin-rule"></div>
-          <p>The AI era doesn't optimize workflows — it renders entire organizational structures obsolete. When an agent can do the work of a department, the fundamental unit of enterprise shifts from headcount to capability. We build the platforms that make this real.</p>
+          <p>When an agent replaces a department, the unit of enterprise shifts from headcount to capability.</p>
+          <span class="accent-line">Deploy a department — not a person.</span>
         </div>
         <div class="philosophy-illus reveal-right">
           <div class="illus-frame illus-frame-video glass-card">
@@ -669,40 +764,51 @@
 
     <!-- ===== SECTION II: Intelligence Creates Economies ===== -->
     <section class="section-philosophy" style="background:var(--color-surface);">
-      <div class="container philosophy-split philosophy-split-reverse">
+      <div class="home-ambient" aria-hidden="true">
+        <div class="home-orb" style="width:450px;height:450px;top:10%;left:-10%;background:radial-gradient(circle,rgba(212,168,78,0.07),transparent 60%);animation:orbDrift2 24s ease-in-out infinite;"></div>
+        <div class="home-orb" style="width:380px;height:380px;bottom:-5%;right:-5%;background:radial-gradient(circle,rgba(160,120,50,0.06),transparent 55%);animation:orbDrift 18s ease-in-out infinite reverse;"></div>
+        <div class="home-orb" style="width:250px;height:250px;top:40%;right:30%;background:radial-gradient(circle,rgba(232,192,90,0.05),transparent 55%);animation:orbPulse 8s ease-in-out infinite;"></div>
+      </div>
+      <div class="container philosophy-split philosophy-split-reverse" style="position:relative;z-index:1;">
         <div class="philosophy-illus reveal-left">
           <div class="illus-frame glass-card" style="--fade-color:var(--color-surface);">
             <img src="assets/image_set/c59ab7fc-3035-486c-9faa-8579b9b388b0.png" alt="" loading="lazy">
           </div>
         </div>
-        <div class="philosophy-text reveal" style="text-align:right;">
-          <div class="overline-glass" style="margin-left:auto;"><p class="overline">II</p></div>
+        <div class="philosophy-text philosophy-glass reveal" style="text-align:right;">
+          <div class="section-label" style="text-align:right;">II · Intelligence</div>
           <h2 style="margin-left:auto;">When intelligence<br>gains <em>agency</em>,<br>it creates wealth.</h2>
-          <div class="thin-rule" style="margin-left:auto;"></div>
-          <p style="margin-left:auto;">The next trillion-dollar industries won't be born from human labor alone — they'll emerge from intelligence architectures that run autonomously, compound continuously, and export value at machine speed. We architect the economies that AI operates.</p>
+          <p style="margin-left:auto;">Trillion-dollar industries emerge from architectures that run autonomously and export value at machine speed.</p>
+          <span class="accent-line" style="text-align:right;">AI doesn't serve. It generates.</span>
         </div>
       </div>
     </section>
 
     <!-- ===== SECTION III: Infrastructure ===== -->
     <section class="section-philosophy">
-      <div class="container philosophy-split">
-        <div class="philosophy-text reveal">
-          <div class="overline-glass"><p class="overline">III</p></div>
+      <div class="home-ambient" aria-hidden="true">
+        <div class="home-orb" style="width:550px;height:550px;bottom:-15%;left:20%;background:radial-gradient(circle,rgba(212,168,78,0.07),transparent 60%);animation:orbDrift 22s ease-in-out infinite;"></div>
+        <div class="home-orb" style="width:300px;height:300px;top:5%;right:-5%;background:radial-gradient(circle,rgba(200,160,60,0.06),transparent 55%);animation:orbDrift2 20s ease-in-out infinite;"></div>
+      </div>
+      <div class="container philosophy-split" style="position:relative;z-index:1;">
+        <div class="philosophy-text philosophy-glass reveal">
+          <div class="section-label">III · Connectivity</div>
           <h2>Every revolution<br>needs <em>infrastructure</em>.</h2>
-          <div class="thin-rule"></div>
-          <p>AI agents need nervous systems. Autonomous economies need communication layers. The physical substrate — silicon, spectrum, connectivity — is the foundation beneath every digital revolution. We design it from first principles, so every signal finds its decision.</p>
+          <p>Silicon. Spectrum. Connectivity. The nervous system beneath every AI agent and autonomous economy.</p>
+          <span class="accent-line">We design it from first principles.</span>
         </div>
         <div class="philosophy-illus reveal-right">
-          <div class="illus-frame glass-card">
-            <img src="assets/image_set/e4b6f867-0282-4ecb-95ff-09b11c092269.png" alt="" loading="lazy">
+          <div class="illus-frame illus-frame-video glass-card">
+            <video autoplay loop muted playsinline preload="auto">
+              <source src="assets/bighand.mp4" type="video/mp4">
+            </video>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ===== PILLARS ===== -->
-    <section style="padding:0;">
+    <section id="main-pillars" style="padding:0;">
       <div class="container" style="max-width:100%;padding:0;">
         <div class="pillars">
           <a href="ginni-x.html" class="pillar pillar-glass reveal" style="text-decoration:none;">
