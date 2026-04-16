@@ -85,14 +85,29 @@ document.querySelectorAll('video.lazy-video').forEach(video => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
+        observer.unobserve(video);
         const sources = video.querySelectorAll('source[data-src]');
         sources.forEach(s => { s.src = s.dataset.src; s.removeAttribute('data-src'); });
         video.load();
-        video.play().catch(() => {});
-        observer.unobserve(video);
+        // Wait for video to be ready before playing
+        const tryPlay = () => {
+          video.play().catch(() => {
+            // If play fails, retry on user interaction (mobile restriction)
+            const retryOnTouch = () => {
+              video.play().catch(() => {});
+              document.removeEventListener('touchstart', retryOnTouch);
+            };
+            document.addEventListener('touchstart', retryOnTouch, { once: true, passive: true });
+          });
+        };
+        video.addEventListener('canplay', tryPlay, { once: true });
+        // Fallback: if canplay already fired or never fires
+        setTimeout(() => {
+          if (video.paused) tryPlay();
+        }, 2000);
       }
     });
-  }, { rootMargin: '200px' });
+  }, { rootMargin: '300px' });
   observer.observe(video);
 });
 
