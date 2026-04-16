@@ -14,10 +14,9 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Share+Tech+Mono&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Share+Tech+Mono&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Share+Tech+Mono&display=swap"></noscript>
-  <!-- video preload removed for performance -->
   <link rel="stylesheet" href="styles/bundle.min.css">
   <style>
-    /* ===== Font Override ===== */
+    /* ===== Font System ===== */
     body { font-family: var(--font-body); }
     h1, h2, h3, h4 {
       font-family: var(--font-display);
@@ -43,7 +42,7 @@
     /* ===== Video Hero ===== */
     .chip-hero {
       position: relative;
-      min-height: 80vh;
+      min-height: 85vh;
       display: flex;
       align-items: flex-end;
       overflow: hidden;
@@ -62,33 +61,30 @@
       inset: 0;
       z-index: 1;
       background: linear-gradient(180deg,
-        rgba(7,9,15,0.2) 0%,
-        rgba(7,9,15,0.3) 30%,
-        rgba(7,9,15,0.7) 65%,
+        rgba(7,9,15,0.15) 0%,
+        rgba(7,9,15,0.25) 30%,
+        rgba(7,9,15,0.65) 60%,
         var(--color-bg) 100%
       );
     }
     .chip-hero-content {
       position: relative;
       z-index: 2;
-      max-width: 680px;
+      max-width: 720px;
     }
     .chip-hero h1 {
       color: #fff;
-      font-size: var(--text-hero);
-      line-height: 0.98;
-      margin-bottom: var(--space-lg);
-    }
-    .chip-hero h1 em {
+      font-size: clamp(2.8rem, 6vw + 0.5rem, 6.5rem);
       font-style: italic;
-      color: var(--color-primary);
+      line-height: 0.96;
+      margin-bottom: var(--space-lg);
     }
     .chip-hero-sub {
       font-weight: 300;
-      font-size: var(--text-lg);
-      color: rgba(255,255,255,0.6);
-      line-height: 1.75;
-      max-width: 50ch;
+      font-size: clamp(1rem, 1.5vw, 1.35rem);
+      color: rgba(255,255,255,0.65);
+      line-height: 1.8;
+      max-width: 52ch;
     }
     .chip-hero-stats {
       display: flex;
@@ -97,10 +93,34 @@
       padding-top: var(--space-xl);
       border-top: 1px solid rgba(255,255,255,0.08);
     }
-    .chip-hero-stats .stat-value { color: #fff; }
-    @media(max-width:768px) {
+    .chip-hero-stats .stat-value {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2.6rem);
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+    .chip-hero-stats .stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+    }
+    @media(max-width:900px) {
+      .chip-hero { min-height: 70vh; }
       .chip-hero-stats { flex-wrap:wrap; gap:var(--space-lg); }
       .chip-hero-stats .stat { flex:1 1 40%; }
+    }
+    @media(max-width:480px) {
+      .chip-hero { min-height: 60vh; padding-bottom: var(--space-xl); }
+    }
+
+    /* ===== Section Spacing ===== */
+    .section-block {
+      padding: clamp(5rem, 10vh, 8rem) 0;
+      position: relative;
+      overflow: hidden;
     }
 
     /* ===== Illustration Float ===== */
@@ -122,79 +142,264 @@
       inset: 0;
       border-radius: inherit;
       background:
-        linear-gradient(90deg, var(--color-bg) 0%, transparent 18%, transparent 82%, var(--color-bg) 100%),
-        linear-gradient(180deg, var(--color-bg) 0%, transparent 15%, transparent 85%, var(--color-bg) 100%);
+        linear-gradient(90deg, var(--fade-color, var(--color-bg)) 0%, transparent 18%, transparent 82%, var(--fade-color, var(--color-bg)) 100%),
+        linear-gradient(180deg, var(--fade-color, var(--color-bg)) 0%, transparent 15%, transparent 85%, var(--fade-color, var(--color-bg)) 100%);
       box-shadow: inset 0 0 60px rgba(7,9,15,0.5);
       pointer-events: none;
     }
 
-    /* ===== Section layouts ===== */
+    /* ===== Split Layout ===== */
     .split-section {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: var(--space-2xl);
       align-items: center;
     }
-    @media(max-width:768px) { .split-section { grid-template-columns:1fr; gap:var(--space-xl); } }
+    .split-section h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.08;
+      margin-bottom: var(--space-lg);
+    }
+    .split-section .body-text {
+      font-weight: 300;
+      font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+      color: var(--color-text-muted);
+      line-height: 1.85;
+    }
+    .split-section .body-text + .body-text {
+      margin-top: var(--space-md);
+    }
+    @media(max-width:900px) {
+      .split-section { grid-template-columns:1fr; gap:var(--space-xl); }
+    }
 
+    /* ===== Product Grid ===== */
     .product-grid {
       display: grid;
       grid-template-columns: repeat(3,1fr);
       gap: var(--space-lg);
     }
-    .product-grid .card { padding: var(--space-xl) var(--space-lg); }
-    @media(max-width:1024px) { .product-grid { grid-template-columns:repeat(2,1fr); } }
-    @media(max-width:600px) { .product-grid { grid-template-columns:1fr; } }
-
-    /* Market bars */
-    .market-bars { display:flex; align-items:flex-end; gap:var(--space-lg); height:280px; padding:var(--space-xl) 0; }
-    .market-bar-col { flex:1; display:flex; flex-direction:column; align-items:center; height:100%; justify-content:flex-end; }
-    .market-bar { width:100%; max-width:80px; border-radius:var(--radius-glass) var(--radius-glass) 0 0; transition:height 1s var(--ease-out); }
-    .market-bar-label { font-size:var(--text-xs); color:var(--color-text-muted); margin-top:var(--space-sm); text-align:center; }
-    .market-bar-value { font-family:var(--font-display); font-size:var(--text-sm); color:var(--color-text); margin-bottom:var(--space-sm); text-align:center; }
-
-    /* Timeline */
-    .timeline { position:relative; padding-left:var(--space-xl); }
-    .timeline::before { content:''; position:absolute; left:0; top:0; bottom:0; width:1px; background:linear-gradient(180deg,var(--color-primary),var(--color-ai),transparent); }
-    .timeline-item { position:relative; padding-bottom:var(--space-xl); }
-    .timeline-item::before { content:''; position:absolute; left:calc(-1*var(--space-xl) - 4px); top:6px; width:9px; height:9px; background:var(--color-primary); border-radius:50%; box-shadow:0 0 12px var(--color-primary); }
-    .timeline-year { font-size:var(--text-xs); font-weight:500; color:var(--color-primary); text-transform:uppercase; letter-spacing:0.15em; margin-bottom:var(--space-xs); }
-    .timeline-item h4 { font-size:var(--text-lg); margin-bottom:var(--space-xs); }
-    .timeline-item p { font-size:var(--text-sm); color:var(--color-text-muted); }
-
-    /* Channel strip */
-    .channel-strip { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; }
-    .channel-item {
-      background: var(--glass-bg);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      padding: var(--space-xl) var(--space-lg);
-      text-align: center;
-      transition: all 0.4s var(--ease-out);
+    .product-card {
+      background: rgba(255,255,255,0.02);
+      backdrop-filter: blur(12px) saturate(1.2);
+      -webkit-backdrop-filter: blur(12px) saturate(1.2);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: var(--radius-glass);
+      padding: clamp(1.8rem, 3vw, 2.5rem);
       position: relative;
       overflow: hidden;
+      transition: all 0.4s var(--ease-out);
+      box-shadow:
+        inset 0 1px 1px rgba(255,255,255,0.06),
+        0 4px 20px rgba(0,0,0,0.2);
     }
-    .channel-item::before {
+    .product-card::before {
       content: '';
       position: absolute;
       inset: 0;
-      padding: 0.5px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 100%);
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 50%, rgba(212,168,78,0.04) 100%);
       -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
       -webkit-mask-composite: xor;
       mask-composite: exclude;
       pointer-events: none;
     }
-    .channel-item:hover { background: var(--glass-bg-hover); }
-    .channel-item h4 { font-size:var(--text-base); margin-bottom:var(--space-sm); }
-    .channel-item p { font-size:var(--text-sm); color:var(--color-text-muted); max-width:22ch; margin:0 auto; }
-    @media(max-width:768px) { .channel-strip { grid-template-columns:repeat(2,1fr); } }
+    .product-card:hover {
+      border-color: rgba(212,168,78,0.12);
+      transform: translateY(-3px);
+      box-shadow:
+        inset 0 1px 1px rgba(255,255,255,0.1),
+        0 8px 32px rgba(0,0,0,0.3);
+    }
+    .product-chip {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: var(--space-md);
+    }
+    .product-card h4 {
+      font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+      margin-bottom: var(--space-sm);
+      color: var(--color-text);
+    }
+    .product-card .desc {
+      font-size: clamp(0.85rem, 1vw, 0.95rem);
+      color: var(--color-text-muted);
+      line-height: 1.75;
+      margin-bottom: var(--space-lg);
+    }
+    .product-asp {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+      color: var(--color-text);
+      margin-bottom: 0.3rem;
+    }
+    .product-asp span {
+      font-family: var(--font-body);
+      font-size: clamp(0.7rem, 0.9vw, 0.8rem);
+      color: var(--color-text-muted);
+    }
+    .product-meta {
+      font-size: clamp(0.7rem, 0.9vw, 0.78rem);
+      color: var(--color-text-muted);
+      letter-spacing: 0.02em;
+    }
+    @media(max-width:1024px) { .product-grid { grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:600px) { .product-grid { grid-template-columns:1fr; } }
+
+    /* ===== Section Headers ===== */
+    .section-header {
+      margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    }
+    .section-header h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.08;
+      margin-top: var(--space-md);
+    }
+    .section-header p {
+      font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+      color: var(--color-text-muted);
+      line-height: 1.8;
+      max-width: 48ch;
+      margin-top: var(--space-lg);
+    }
+    .section-header.center {
+      text-align: center;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .section-header.center .overline { justify-content: center; }
+    .section-header.center p { margin-left: auto; margin-right: auto; }
+
+    /* ===== Market Bars ===== */
+    .market-bars { display:flex; align-items:flex-end; gap:var(--space-lg); height:300px; padding:var(--space-xl) 0; }
+    .market-bar-col { flex:1; display:flex; flex-direction:column; align-items:center; height:100%; justify-content:flex-end; }
+    .market-bar { width:100%; max-width:90px; transition:height 1s var(--ease-out); }
+    .market-bar-label { font-size:0.7rem; color:var(--color-text-muted); margin-top:var(--space-sm); text-align:center; letter-spacing:0.04em; }
+    .market-bar-value { font-family:var(--font-display); font-size:clamp(1rem, 1.5vw, 1.3rem); color:var(--color-text); margin-bottom:var(--space-sm); text-align:center; }
+
+    /* ===== Channel Strip ===== */
+    .channel-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-lg);
+    }
+    .channel-item {
+      background: rgba(255,255,255,0.02);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: clamp(1.5rem, 3vw, 2.5rem);
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.05);
+      transition: all 0.4s var(--ease-out);
+      box-shadow:
+        inset 0 1px 1px rgba(255,255,255,0.06),
+        0 4px 16px rgba(0,0,0,0.15);
+    }
+    .channel-item:hover {
+      border-color: rgba(212,168,78,0.12);
+      transform: translateY(-2px);
+    }
+    .channel-item h4 {
+      font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+      margin-bottom: var(--space-sm);
+    }
+    .channel-item p {
+      font-size: clamp(0.85rem, 1vw, 0.95rem);
+      color: var(--color-text-muted);
+      line-height: 1.7;
+    }
+    @media(max-width:900px) { .channel-strip { grid-template-columns:repeat(2,1fr); } }
     @media(max-width:480px) { .channel-strip { grid-template-columns:1fr; } }
 
-    /* CTA */
-    .cta-section { text-align:center; padding:var(--space-2xl) 0; }
-    .cta-section h2 { margin-bottom:var(--space-md); }
-    .cta-section p { color:var(--color-text-muted); max-width:48ch; margin:0 auto var(--space-xl); font-size:var(--text-lg); }
+    /* ===== Timeline ===== */
+    .timeline { position:relative; padding-left:var(--space-xl); }
+    .timeline::before { content:''; position:absolute; left:0; top:0; bottom:0; width:1px; background:linear-gradient(180deg,var(--color-primary),var(--color-ai),transparent); }
+    .timeline-item { position:relative; padding-bottom:clamp(1.5rem, 3vw, 2.5rem); }
+    .timeline-item::before { content:''; position:absolute; left:calc(-1*var(--space-xl) - 4px); top:6px; width:9px; height:9px; background:var(--color-primary); border-radius:50%; box-shadow:0 0 12px var(--color-primary); }
+    .timeline-year {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--color-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.3rem;
+    }
+    .timeline-item h4 {
+      font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+      margin-bottom: 0.4rem;
+    }
+    .timeline-item p {
+      font-size: clamp(0.88rem, 1.1vw, 1rem);
+      color: var(--color-text-muted);
+      line-height: 1.75;
+    }
+
+    /* ===== Advantages Grid ===== */
+    .advantage-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-lg);
+    }
+    .advantage-card {
+      background: rgba(255,255,255,0.02);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: clamp(1.8rem, 3vw, 2.5rem);
+      border-radius: var(--radius-glass);
+      border: 1px solid rgba(255,255,255,0.05);
+      transition: all 0.4s var(--ease-out);
+      box-shadow:
+        inset 0 1px 1px rgba(255,255,255,0.06),
+        0 4px 20px rgba(0,0,0,0.15);
+    }
+    .advantage-card:hover {
+      border-color: rgba(212,168,78,0.12);
+      transform: translateY(-2px);
+    }
+    .advantage-num {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      color: rgba(212,168,78,0.2);
+      line-height: 1;
+      margin-bottom: var(--space-md);
+    }
+    .advantage-card h4 {
+      font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+      margin-bottom: var(--space-sm);
+    }
+    .advantage-card p {
+      font-size: clamp(0.88rem, 1.1vw, 1rem);
+      color: var(--color-text-muted);
+      line-height: 1.75;
+    }
+    @media(max-width:900px) { .advantage-grid { grid-template-columns: 1fr; } }
+
+    /* ===== CTA Section ===== */
+    .cta-section {
+      text-align: center;
+      padding: clamp(6rem, 12vh, 10rem) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section h2 {
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      line-height: 1.15;
+      margin-bottom: var(--space-md);
+    }
+    .cta-section p {
+      color: var(--color-text-muted);
+      max-width: 48ch;
+      margin: 0 auto var(--space-xl);
+      font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+      line-height: 1.75;
+    }
   </style>
 </head>
 <body>
@@ -227,7 +432,7 @@
 
   <main id="main">
 
-    <!-- ===== HERO: wifichip.mp4 ===== -->
+    <!-- ===== HERO ===== -->
     <section class="chip-hero">
       <video class="chip-hero-video" autoplay loop muted playsinline preload="metadata" poster="assets/wifichip_poster.jpg">
         <source src="assets/wifichip.mp4" type="video/mp4">
@@ -235,7 +440,7 @@
       <div class="chip-hero-gradient"></div>
       <div class="container chip-hero-content">
         <p class="overline reveal" style="margin-bottom:var(--space-lg);">IoT Chip & Robotics Division</p>
-        <h1 class="reveal" style="transition-delay:100ms;font-style:italic;">Six Product Lines. <br>One Unified <em>Platform</em>.</h1>
+        <h1 class="reveal" style="transition-delay:100ms;">Six Product Lines. <br>One Unified <em>Platform</em>.</h1>
         <p class="chip-hero-sub reveal" style="transition-delay:200ms;">The nervous system beneath every AI agent and autonomous economy — from sub-1 GHz sensors to Wi-Fi 7 enterprise silicon.</p>
         <div class="chip-hero-stats reveal" style="transition-delay:300ms;">
           <div class="stat"><div class="stat-value">6</div><div class="stat-label">Chip Product Lines</div></div>
@@ -246,15 +451,15 @@
       </div>
     </section>
 
-    <!-- ===== OVERVIEW + Chip Illustration ===== -->
-    <section style="position:relative;overflow:hidden;">
+    <!-- ===== OVERVIEW ===== -->
+    <section class="section-block">
       <div class="ambient-orb" style="width:500px;height:500px;top:-10%;right:-8%;background:radial-gradient(circle,rgba(212,168,78,0.06),transparent 65%);animation:orbDrift 20s ease-in-out infinite;"></div>
       <div class="container split-section" style="position:relative;z-index:1;">
         <div class="reveal-left">
           <p class="overline" style="margin-bottom:var(--space-lg);">Overview</p>
-          <h2 style="margin-top:var(--space-md);">Full-Band <em>IoT</em> <br>Chipsets</h2>
-          <p class="text-muted" style="margin-top:var(--space-lg);font-size:var(--text-lg);line-height:1.8;">The only company with a complete portfolio covering sub-1 GHz HaLow, 2.4/5/6 GHz Wi-Fi 6/7, and 5G-NR RF — all under one design team.</p>
-          <p class="text-muted" style="margin-top:var(--space-md);font-size:var(--text-lg);line-height:1.8;">Software-Defined Radio with PUF hardware security and on-chip edge-AI inference — integrated at silicon level.</p>
+          <h2>Full-Band <em>IoT</em> <br>Chipsets</h2>
+          <p class="body-text">The only company with a complete portfolio covering sub-1 GHz HaLow, 2.4/5/6 GHz Wi-Fi 6/7, and 5G-NR RF — all under one design team.</p>
+          <p class="body-text">Software-Defined Radio with PUF hardware security and on-chip edge-AI inference — integrated at silicon level.</p>
         </div>
         <div class="illus-float reveal-right" style="aspect-ratio:16/10;">
           <video class="lazy-video" loop muted playsinline preload="none" poster="assets/chipfactory_poster.jpg" style="width:100%;height:100%;object-fit:cover;">
@@ -264,36 +469,71 @@
       </div>
     </section>
 
-    <div class="container"><div class="divider"></div></div>
-
     <!-- ===== PRODUCT PORTFOLIO ===== -->
-    <section id="portfolio">
+    <section id="portfolio" class="section-block" style="background:var(--color-surface);">
       <div class="container">
-        <div class="reveal" style="max-width:600px;margin-bottom:var(--space-xl);">
+        <div class="section-header reveal">
           <p class="overline">Product Portfolio</p>
-          <h2 style="margin-top:var(--space-md);">The <em>Silicon</em></h2>
+          <h2>The <em>Silicon</em></h2>
         </div>
         <div class="product-grid stagger">
-          <div class="card reveal"><span class="product-chip">Wi-Fi HaLow · 802.11ah</span><h4>G-Link Series</h4><p class="text-muted" style="font-size:var(--text-sm);">Sub-1 GHz long-range IoT connectivity for smart city, agriculture, and industrial applications. TSMC 40nm.</p><div class="product-asp">$6 <span>/ unit ASP</span></div><div class="product-meta">60% gross margin · Mass production Q3 2026</div></div>
-          <div class="card reveal"><span class="product-chip">Wi-Fi 6 SoC</span><h4>2×2 + BT 5.4 SoC</h4><p class="text-muted" style="font-size:var(--text-sm);">Station-mode system-on-chip for consumer electronics — TV boxes, tablets, smart home devices. GF 22nm.</p><div class="product-asp">$3 <span>/ unit ASP</span></div><div class="product-meta">40% gross margin · Production-ready Q2 2026</div></div>
-          <div class="card reveal"><span class="product-chip">Wi-Fi 6/6e/7 RF</span><h4>Freya Transceiver</h4><p class="text-muted" style="font-size:var(--text-sm);">High-performance 4×4 RF transceiver for enterprise routers, drones, and 5G-NR base stations. TSMC 28nm.</p><div class="product-asp">$20 <span>/ unit ASP</span></div><div class="product-meta">60% gross margin · Mass production Q3 2026</div></div>
-          <div class="card reveal"><span class="product-chip">Wi-Fi 7 Baseband</span><h4>4×4 AP Baseband</h4><p class="text-muted" style="font-size:var(--text-sm);">Next-generation access point baseband positioning Mega X among the global top-5 Wi-Fi 7 silicon vendors. TSMC 28nm.</p><div class="product-asp">$30 <span>/ unit ASP</span></div><div class="product-meta">60% gross margin · Target Q3 2027</div></div>
-          <div class="card reveal"><span class="product-chip">Wi-Fi 7 AP SoC</span><h4>2×2 Mid-Range SoC</h4><p class="text-muted" style="font-size:var(--text-sm);">Integrated transceiver + baseband for mid-range routers. Targeting the $75M+ annual router chip market. GF 22nm.</p><div class="product-asp">$15 <span>/ unit ASP</span></div><div class="product-meta">50% gross margin · Target Q3 2027</div></div>
-          <div class="card reveal"><span class="product-chip">Edge AI · Robotics</span><h4>Joint Neural Network</h4><p class="text-muted" style="font-size:var(--text-sm);">Neural network inference at the robotic joint level — enabling intelligent motion control for industrial automation.</p><div class="product-asp">$10 <span>/ unit ASP</span></div><div class="product-meta">50% gross margin · Chip sales Q1 2028</div></div>
+          <div class="product-card reveal">
+            <span class="product-chip">Wi-Fi HaLow · 802.11ah</span>
+            <h4>G-Link Series</h4>
+            <p class="desc">Sub-1 GHz long-range IoT connectivity for smart city, agriculture, and industrial applications. TSMC 40nm.</p>
+            <div class="product-asp">$6 <span>/ unit ASP</span></div>
+            <div class="product-meta">60% gross margin · Mass production Q3 2026</div>
+          </div>
+          <div class="product-card reveal">
+            <span class="product-chip">Wi-Fi 6 SoC</span>
+            <h4>2×2 + BT 5.4 SoC</h4>
+            <p class="desc">Station-mode system-on-chip for consumer electronics — TV boxes, tablets, smart home devices. GF 22nm.</p>
+            <div class="product-asp">$3 <span>/ unit ASP</span></div>
+            <div class="product-meta">40% gross margin · Production-ready Q2 2026</div>
+          </div>
+          <div class="product-card reveal">
+            <span class="product-chip">Wi-Fi 6/6e/7 RF</span>
+            <h4>Freya Transceiver</h4>
+            <p class="desc">High-performance 4×4 RF transceiver for enterprise routers, drones, and 5G-NR base stations. TSMC 28nm.</p>
+            <div class="product-asp">$20 <span>/ unit ASP</span></div>
+            <div class="product-meta">60% gross margin · Mass production Q3 2026</div>
+          </div>
+          <div class="product-card reveal">
+            <span class="product-chip">Wi-Fi 7 Baseband</span>
+            <h4>4×4 AP Baseband</h4>
+            <p class="desc">Next-generation access point baseband positioning Mega X among the global top-5 Wi-Fi 7 silicon vendors. TSMC 28nm.</p>
+            <div class="product-asp">$30 <span>/ unit ASP</span></div>
+            <div class="product-meta">60% gross margin · Target Q3 2027</div>
+          </div>
+          <div class="product-card reveal">
+            <span class="product-chip">Wi-Fi 7 AP SoC</span>
+            <h4>2×2 Mid-Range SoC</h4>
+            <p class="desc">Integrated transceiver + baseband for mid-range routers. Targeting the $75M+ annual router chip market. GF 22nm.</p>
+            <div class="product-asp">$15 <span>/ unit ASP</span></div>
+            <div class="product-meta">50% gross margin · Target Q3 2027</div>
+          </div>
+          <div class="product-card reveal">
+            <span class="product-chip">Edge AI · Robotics</span>
+            <h4>Joint Neural Network</h4>
+            <p class="desc">Neural network inference at the robotic joint level — enabling intelligent motion control for industrial automation.</p>
+            <div class="product-asp">$10 <span>/ unit ASP</span></div>
+            <div class="product-meta">50% gross margin · Chip sales Q1 2028</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== MARKET + Illustration ===== -->
-    <section id="markets" style="background:var(--color-surface);">
-      <div class="container">
-        <div class="split-section" style="margin-bottom:var(--space-2xl);">
+    <!-- ===== MARKET ===== -->
+    <section id="markets" class="section-block" style="position:relative;overflow:hidden;">
+      <div class="ambient-orb" style="width:450px;height:450px;top:10%;left:-8%;background:radial-gradient(circle,rgba(212,168,78,0.05),transparent 60%);animation:orbDrift2 22s ease-in-out infinite;"></div>
+      <div class="container" style="position:relative;z-index:1;">
+        <div class="split-section" style="margin-bottom:clamp(3rem,6vw,5rem);">
           <div class="reveal-left">
             <p class="overline" style="margin-bottom:var(--space-lg);">Market Opportunity</p>
             <h2>Riding the <em>$80B+</em> <br>Wireless Chip Wave</h2>
-            <p class="text-muted" style="margin-top:var(--space-lg);font-size:var(--text-lg);line-height:1.8;">The global RF chip market was valued at $46.5B in 2024. Wi-Fi 6/6E/7 chipsets alone are projected to reach $80.9B by 2030, with Wi-Fi 7 comprising $22.9B of that total.</p>
+            <p class="body-text">The global RF chip market was valued at $46.5B in 2024. Wi-Fi 6/6E/7 chipsets alone are projected to reach $80.9B by 2030, with Wi-Fi 7 comprising $22.9B of that total.</p>
           </div>
-          <div class="market-bars reveal-scale" style="max-width:400px;margin:0 auto;">
+          <div class="market-bars reveal-scale" style="max-width:420px;margin:0 auto;">
             <div class="market-bar-col"><div class="market-bar-value">$46.5B</div><div class="market-bar" style="height:55%;background:linear-gradient(180deg,var(--color-primary),var(--color-primary-dim));border-radius:var(--radius-glass) var(--radius-glass) 0 0;"></div><div class="market-bar-label">RF 2024</div></div>
             <div class="market-bar-col"><div class="market-bar-value">$80.9B</div><div class="market-bar" style="height:95%;background:linear-gradient(180deg,var(--color-ai),var(--color-ai-dim));border-radius:var(--radius-glass) var(--radius-glass) 0 0;"></div><div class="market-bar-label">Wi-Fi 2030</div></div>
             <div class="market-bar-col"><div class="market-bar-value">$22.9B</div><div class="market-bar" style="height:28%;background:linear-gradient(180deg,#8878A8,#3A2858);border-radius:var(--radius-glass) var(--radius-glass) 0 0;"></div><div class="market-bar-label">Wi-Fi 7</div></div>
@@ -301,7 +541,9 @@
           </div>
         </div>
 
-        <p class="overline reveal" style="margin-bottom:var(--space-lg);">Go-To-Market Channels</p>
+        <div class="section-header reveal">
+          <p class="overline">Go-To-Market Channels</p>
+        </div>
         <div class="channel-strip reveal-scale">
           <div class="channel-item"><h4>Telecom Operators</h4><p>Smart city & 5G IoT deployments via operator partnerships</p></div>
           <div class="channel-item"><h4>Consumer OEMs</h4><p>Smart home, TV, tablet & wearable device integration</p></div>
@@ -311,14 +553,14 @@
       </div>
     </section>
 
-    <!-- ===== ROADMAP + Illustration ===== -->
-    <section id="roadmap" style="position:relative;overflow:hidden;">
+    <!-- ===== ROADMAP ===== -->
+    <section id="roadmap" class="section-block">
       <div class="ambient-orb" style="width:450px;height:450px;bottom:-15%;left:-5%;background:radial-gradient(circle,rgba(212,168,78,0.05),transparent 60%);animation:orbDrift2 22s ease-in-out infinite;"></div>
       <div class="container split-section" style="position:relative;z-index:1;">
         <div>
-          <div class="reveal" style="margin-bottom:var(--space-xl);">
+          <div class="section-header reveal">
             <p class="overline">Execution Roadmap</p>
-            <h2 style="margin-top:var(--space-md);">From Silicon <br>to <em>Scale</em></h2>
+            <h2>From Silicon <br>to <em>Scale</em></h2>
           </div>
           <div class="timeline stagger">
             <div class="timeline-item reveal"><div class="timeline-year">Q1–Q2 2026</div><h4>Production Ignition</h4><p>Wi-Fi 6 SoC mass production. HaLow G-Link and Freya design optimization. Wi-Fi 7 teams onboarded.</p></div>
@@ -335,26 +577,39 @@
     </section>
 
     <!-- ===== ADVANTAGES ===== -->
-    <section style="background:var(--color-surface);">
+    <section class="section-block" style="background:var(--color-surface);">
       <div class="container">
-        <div class="reveal" style="text-align:center;max-width:650px;margin:0 auto var(--space-xl);">
-          <p class="overline" style="justify-content:center;">Competitive Advantages</p>
-          <h2 style="margin-top:var(--space-md);">Why Mega X <em>Wins</em></h2>
+        <div class="section-header center reveal">
+          <p class="overline">Competitive Advantages</p>
+          <h2>Why Mega X <em>Wins</em></h2>
         </div>
-        <div class="grid grid-3 gap-lg stagger">
-          <div class="card reveal"><div class="card-number">01</div><h4>Full-Spectrum Portfolio</h4><p class="text-muted" style="font-size:var(--text-sm);">The only provider offering HaLow, Wi-Fi 6/7, and 5G-NR RF transceivers from a single design team.</p></div>
-          <div class="card reveal"><div class="card-number">02</div><h4>Dual-Foundry Strategy</h4><p class="text-muted" style="font-size:var(--text-sm);">TSMC and GlobalFoundries at 22–40nm nodes eliminate single-supplier risk and ensure capacity resilience.</p></div>
-          <div class="card reveal"><div class="card-number">03</div><h4>IP Licensing Upside</h4><p class="text-muted" style="font-size:var(--text-sm);">Wi-Fi 6 SoC generates chip revenue plus recurring royalty — $4M licensing fee + $0.12 per-chip royalty.</p></div>
+        <div class="advantage-grid stagger">
+          <div class="advantage-card reveal">
+            <div class="advantage-num">01</div>
+            <h4>Full-Spectrum Portfolio</h4>
+            <p>The only provider offering HaLow, Wi-Fi 6/7, and 5G-NR RF transceivers from a single design team.</p>
+          </div>
+          <div class="advantage-card reveal">
+            <div class="advantage-num">02</div>
+            <h4>Dual-Foundry Strategy</h4>
+            <p>TSMC and GlobalFoundries at 22–40nm nodes eliminate single-supplier risk and ensure capacity resilience.</p>
+          </div>
+          <div class="advantage-card reveal">
+            <div class="advantage-num">03</div>
+            <h4>IP Licensing Upside</h4>
+            <p>Wi-Fi 6 SoC generates chip revenue plus recurring royalty — $4M licensing fee + $0.12 per-chip royalty.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ===== CTA ===== -->
     <section class="cta-section">
-      <div class="container reveal">
+      <div class="ambient-orb" style="width:400px;height:400px;top:-20%;left:50%;transform:translateX(-50%);background:radial-gradient(circle,rgba(212,168,78,0.06),transparent 65%);animation:orbDrift 18s ease-in-out infinite;"></div>
+      <div class="container reveal" style="position:relative;z-index:1;">
         <h2>Ready to Build the <em>Future</em> <br>of Connectivity?</h2>
         <p>Whether you're an investor, OEM partner, or enterprise customer — we'd like to hear from you.</p>
-        <div class="flex gap-md" style="justify-content:center;flex-wrap:wrap;">
+        <div style="display:flex;gap:var(--space-md);justify-content:center;flex-wrap:wrap;">
           <a href="contact.html" class="btn btn-primary">Contact Our Team →</a>
           <a href="about.html" class="btn btn-outline">Learn More About Us</a>
         </div>
