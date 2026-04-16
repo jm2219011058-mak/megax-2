@@ -569,6 +569,7 @@
     .aethelgard {
       padding: clamp(6rem, 12vh, 10rem) 0 0;
       position: relative;
+      overflow: hidden;
     }
     .aethelgard-intro {
       text-align: center;
@@ -610,6 +611,10 @@
       background: rgba(212, 170, 76, 0.08);
       border-top: 1px solid rgba(212, 170, 76, 0.1);
       border-bottom: 1px solid rgba(212, 170, 76, 0.1);
+      width: 100%;
+      max-width: 100vw;
+      overflow: hidden;
+      box-sizing: border-box;
     }
     .domain {
       background: var(--color-bg);
@@ -622,6 +627,8 @@
       padding: clamp(1.8rem, 3vw, 2.8rem);
       cursor: default;
       transition: transform 0.7s var(--ease-out);
+      box-sizing: border-box;
+      max-width: 100%;
     }
     .domain-bg {
       position: absolute;
@@ -1544,10 +1551,12 @@
       .aethelgard-band { aspect-ratio: 4/3; }
 
       /* Domains */
-      .domain { padding: clamp(1rem, 2vw, 1.4rem); }
-      .domain-content { padding: 14px 16px; max-width: 100%; box-sizing: border-box; }
+      .domains { max-width: 100vw; overflow: hidden; }
+      .domain { padding: clamp(1rem, 2vw, 1.4rem); max-width: 100%; box-sizing: border-box; }
+      .domain-bg img { width: 100%; height: 100%; object-fit: cover; }
+      .domain-content { padding: 14px 16px; max-width: 100%; box-sizing: border-box; overflow: hidden; }
       .domain h3 { font-size: clamp(1.2rem, 3.5vw, 1.6rem); }
-      .domain p { font-size: 0.82rem; max-width: 100%; word-break: break-word; }
+      .domain p { font-size: 0.82rem; max-width: 100%; word-break: break-word; overflow-wrap: break-word; }
 
       /* Star Maker */
       .star-maker-header h2 { font-size: clamp(1.6rem, 5vw, 2.2rem); }
@@ -1825,7 +1834,7 @@
 
       <div class="domains reveal" style="transition-delay:180ms;">
         <div class="domain" data-domain="football">
-          <div class="domain-bg"><img src="assets/fann/football-heroes.jpg" alt="Galactic Football AI Heroes" loading="lazy"></div>
+          <div class="domain-bg"><img src="assets/fann/saudi-2034-stadium.jpg" alt="Saudi 2034 Stadium — Galactic Football AI" loading="lazy"></div>
           <div class="domain-content">
             <div class="domain-num">Domain 01 · Football</div>
             <h3>Galactic <em>Football AI</em> Economy</h3>
