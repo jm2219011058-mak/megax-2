@@ -58,26 +58,35 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// ========== HERO VIDEO AUTOPLAY FALLBACK (mobile) ==========
+// ========== HERO VIDEO DEFERRED LOAD ==========
+// Poster shows instantly; video loads after page is interactive
 document.querySelectorAll('video[autoplay]').forEach(video => {
-  // iOS may block autoplay even with muted+playsinline; retry after load
-  const tryPlay = () => {
-    if (video.paused) {
-      video.play().catch(() => {});
+  const loadAndPlay = () => {
+    const sources = video.querySelectorAll('source[data-src]');
+    if (sources.length) {
+      sources.forEach(s => { s.src = s.dataset.src; s.removeAttribute('data-src'); });
+      video.load();
     }
+    const tryPlay = () => {
+      if (video.paused) video.play().catch(() => {});
+    };
+    video.addEventListener('canplay', tryPlay, { once: true });
+    setTimeout(tryPlay, 2000);
+    // Mobile fallback: play on first interaction
+    const playOnInteract = () => {
+      tryPlay();
+      document.removeEventListener('touchstart', playOnInteract);
+      document.removeEventListener('click', playOnInteract);
+    };
+    document.addEventListener('touchstart', playOnInteract, { once: true, passive: true });
+    document.addEventListener('click', playOnInteract, { once: true });
   };
-  // Try immediately, on canplay, and after a short delay
-  tryPlay();
-  video.addEventListener('canplay', tryPlay, { once: true });
-  setTimeout(tryPlay, 1000);
-  // Also try on first user interaction as a last resort
-  const playOnInteract = () => {
-    tryPlay();
-    document.removeEventListener('touchstart', playOnInteract);
-    document.removeEventListener('click', playOnInteract);
-  };
-  document.addEventListener('touchstart', playOnInteract, { once: true, passive: true });
-  document.addEventListener('click', playOnInteract, { once: true });
+  // Defer: wait until page is idle or after 1s
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(loadAndPlay, { timeout: 1500 });
+  } else {
+    setTimeout(loadAndPlay, 1000);
+  }
 });
 
 // ========== LAZY VIDEO (IntersectionObserver) ==========
