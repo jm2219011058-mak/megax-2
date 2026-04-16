@@ -58,6 +58,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// ========== LAZY VIDEO (IntersectionObserver) ==========
+document.querySelectorAll('video.lazy-video').forEach(video => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const sources = video.querySelectorAll('source[data-src]');
+        sources.forEach(s => { s.src = s.dataset.src; s.removeAttribute('data-src'); });
+        video.load();
+        video.play().catch(() => {});
+        observer.unobserve(video);
+      }
+    });
+  }, { rootMargin: '200px' });
+  observer.observe(video);
+});
+
 // ========== SCROLL TO TOP ==========
 const scrollTopBtn = document.querySelector('.scroll-top');
 if (scrollTopBtn) {

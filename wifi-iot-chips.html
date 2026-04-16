@@ -11,13 +11,11 @@
   <link rel="apple-touch-icon" href="assets/final-apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-  <link rel="preload" as="video" href="assets/wifichip.mp4" type="video/mp4">
-  <link rel="stylesheet" href="styles/variables.css">
-  <link rel="stylesheet" href="styles/base.css">
-  <link rel="stylesheet" href="styles/components.css">
-  <link rel="stylesheet" href="styles/utilities.css">
-  <link rel="stylesheet" href="styles/animations.css">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Share+Tech+Mono&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Share+Tech+Mono&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Share+Tech+Mono&display=swap"></noscript>
+  <!-- video preload removed for performance -->
+  <link rel="stylesheet" href="styles/bundle.min.css">
   <style>
     /* ===== Video Hero ===== */
     .chip-hero {
@@ -208,7 +206,7 @@
 
     <!-- ===== HERO: wifichip.mp4 ===== -->
     <section class="chip-hero">
-      <video class="chip-hero-video" autoplay loop muted playsinline preload="auto">
+      <video class="chip-hero-video" autoplay loop muted playsinline preload="metadata" poster="assets/wifichip_poster.jpg">
         <source src="assets/wifichip.mp4" type="video/mp4">
       </video>
       <div class="chip-hero-gradient"></div>
@@ -235,8 +233,8 @@
           <p class="text-muted" style="margin-top:var(--space-md);font-size:var(--text-lg);line-height:1.8;">Software-Defined Radio architecture with PUF-based hardware security and on-chip edge-AI inference — integrated at the silicon level.</p>
         </div>
         <div class="illus-float reveal-right" style="aspect-ratio:16/10;">
-          <video autoplay loop muted playsinline preload="auto" style="width:100%;height:100%;object-fit:cover;">
-            <source src="assets/chipfactory.mp4" type="video/mp4">
+          <video class="lazy-video" loop muted playsinline preload="none" poster="assets/chipfactory_poster.jpg" style="width:100%;height:100%;object-fit:cover;">
+            <source data-src="assets/chipfactory.mp4" type="video/mp4">
           </video>
         </div>
       </div>
@@ -351,7 +349,7 @@
     </div>
   </footer>
 
-  <button class="scroll-top" aria-label="Scroll to top">↑</button>
+  <button class="scroll-top" aria-label="Scroll to top"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 15V3"/><path d="M3 8l6-6 6 6"/></svg></button>
   <script src="js/main.js"></script>
 </body>
 </html>

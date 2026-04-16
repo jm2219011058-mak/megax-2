@@ -14,12 +14,10 @@
   <link rel="apple-touch-icon" href="assets/final-apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/variables.css">
-  <link rel="stylesheet" href="styles/base.css">
-  <link rel="stylesheet" href="styles/components.css">
-  <link rel="stylesheet" href="styles/utilities.css">
-  <link rel="stylesheet" href="styles/animations.css">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Share+Tech+Mono&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Share+Tech+Mono&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Share+Tech+Mono&display=swap"></noscript>
+  <link rel="stylesheet" href="styles/bundle.min.css">
   <style>
     /* ===== FannX Gaming AI — Page Styles ===== */
     body.fann-page { font-family: var(--font-body); }
@@ -1870,7 +1868,7 @@
     </div>
   </footer>
 
-  <button class="scroll-top" aria-label="Scroll to top">↑</button>
+  <button class="scroll-top" aria-label="Scroll to top"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 15V3"/><path d="M3 8l6-6 6 6"/></svg></button>
   <script src="js/main.js"></script>
 </body>
 </html>
