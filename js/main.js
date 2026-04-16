@@ -58,6 +58,28 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// ========== HERO VIDEO AUTOPLAY FALLBACK (mobile) ==========
+document.querySelectorAll('video[autoplay]').forEach(video => {
+  // iOS may block autoplay even with muted+playsinline; retry after load
+  const tryPlay = () => {
+    if (video.paused) {
+      video.play().catch(() => {});
+    }
+  };
+  // Try immediately, on canplay, and after a short delay
+  tryPlay();
+  video.addEventListener('canplay', tryPlay, { once: true });
+  setTimeout(tryPlay, 1000);
+  // Also try on first user interaction as a last resort
+  const playOnInteract = () => {
+    tryPlay();
+    document.removeEventListener('touchstart', playOnInteract);
+    document.removeEventListener('click', playOnInteract);
+  };
+  document.addEventListener('touchstart', playOnInteract, { once: true, passive: true });
+  document.addEventListener('click', playOnInteract, { once: true });
+});
+
 // ========== LAZY VIDEO (IntersectionObserver) ==========
 document.querySelectorAll('video.lazy-video').forEach(video => {
   const observer = new IntersectionObserver((entries) => {
