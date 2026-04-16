@@ -1511,15 +1511,71 @@
     .fann-closing > .container { position: relative; z-index: 1; }
 
     /* ===== Mobile tune-ups ===== */
+    .fann-page { overflow-x: hidden; }
+
     @media (max-width: 768px) {
       .fann-hero { min-height: 88vh; }
       .fann-hero-inner { padding: 0 1.25rem; }
+      .fann-hero-title { font-size: clamp(2.6rem, 10vw, 4.5rem); }
       .fann-scroll-hint { bottom: 1.6rem; }
       .container { padding: 0 1.25rem; }
+
+      /* Vision */
+      .vision-title { max-width: 100%; font-size: clamp(1.8rem, 6vw, 2.6rem); }
+      .vision-lede { font-size: var(--text-base); }
+
+      /* Prometheus */
+      .prometheus-header h2 { font-size: clamp(1.8rem, 5.5vw, 2.6rem); }
+      .prometheus-stats { grid-template-columns: 1fr; }
       .prometheus-banner { aspect-ratio: 16/11; }
       .prometheus-banner-caption { flex-direction: column; align-items: flex-start; }
+
+      /* Positioning / Markets */
+      .positioning-header h2 { font-size: clamp(1.6rem, 5vw, 2.2rem); }
+      .positioning-header p { font-size: var(--text-base); }
+
+      /* Reality block */
+      .reality-text h2 { font-size: clamp(1.6rem, 5vw, 2.2rem); }
+      .reality-text p { font-size: var(--text-base); }
+
+      /* Aethelgard */
+      .aethelgard-name { font-size: clamp(2rem, 7vw, 3.2rem); }
+      .aethelgard-tagline { font-size: var(--text-base); }
       .aethelgard-band { aspect-ratio: 4/3; }
+
+      /* Domains */
+      .domain h3 { font-size: clamp(1.3rem, 4vw, 1.8rem); }
+      .domain p { font-size: 0.85rem; }
+
+      /* Star Maker */
+      .star-maker-header h2 { font-size: clamp(1.6rem, 5vw, 2.2rem); }
+      .flywheel-step:not(:last-child)::after {
+        right: 50%; top: auto; bottom: -20px;
+        transform: translateX(50%);
+      }
+
+      /* Shariah */
       .shariah-inner { padding: 2rem 1.4rem; }
+      .shariah h3 { font-size: clamp(1.4rem, 4.5vw, 2rem); }
+      .shariah p { font-size: var(--text-base); }
+      .shariah-badges { gap: 6px; }
+      .shariah-badge { font-size: 0.52rem; padding: 6px 10px; }
+
+      /* Closing */
+      .fann-closing h2 { font-size: clamp(1.6rem, 5vw, 2.4rem); }
+
+      /* Ambient orbs — reduce on mobile */
+      .vision-ambient-orb { width: 300px; height: 300px; }
+    }
+
+    @media (max-width: 480px) {
+      .fann-hero-title { font-size: clamp(2.2rem, 11vw, 3.5rem); }
+      .fann-hero-sub { font-size: 0.95rem; }
+      .fann-hero-tag { font-size: 0.6rem; padding: 8px 16px; }
+      .market-size { font-size: clamp(1.8rem, 6vw, 2.4rem); }
+      .prometheus-stat .big { font-size: clamp(2rem, 8vw, 3rem); }
+      .aethelgard-name { font-size: clamp(1.6rem, 8vw, 2.4rem); }
+      .domain { min-height: 320px; }
     }
   </style>
 </head>
@@ -1561,7 +1617,7 @@
       <div class="fann-hero-overlay"></div>
       <div class="fann-hero-inner">
         <div class="fann-hero-eyebrow">FannX Gaming AI</div>
-        <h1 class="fann-hero-title">The AI-Native<br>Game Forge.</h1>
+        <h1 class="fann-hero-title">The AI-Native <br>Game Forge.</h1>
         <p class="fann-hero-sub">The world's first AI game production line — where intelligence creates worlds, breeds champions, and exports economies at machine scale.</p>
         <span class="fann-hero-tag">AI Game Production · Prometheus Engine</span>
       </div>
@@ -1580,7 +1636,7 @@
       <div class="vision-ambient-orb orb-r" aria-hidden="true"></div>
       <div class="container">
         <div class="vision-kicker reveal">I · Vision</div>
-        <h2 class="vision-title reveal" style="transition-delay:120ms;">We are a new species —<br><em>Reality-Output Gaming</em>.</h2>
+        <h2 class="vision-title reveal" style="transition-delay:120ms;">We are a new species — <br><em>Reality-Output Gaming</em>.</h2>
         <div class="vision-divider reveal" style="transition-delay:200ms;"></div>
         <p class="vision-lede reveal" style="transition-delay:280ms;">Empower everyone with an AI that earns for them, continuously, in a virtual world. Players input time, strategy, and expertise — our Prophecy Engine powers AI agents that run matches, manage assets, and create tradable value, monetized on a compliant exchange.</p>
       </div>
@@ -1594,7 +1650,7 @@
       <div class="container">
         <div class="prometheus-header reveal">
           <div class="prometheus-subtitle">II · Prometheus Framework X</div>
-          <h2>Next-generation AI-native<br>game production <em>infrastructure</em>.</h2>
+          <h2>Next-generation AI-native <br>game production <em>infrastructure</em>.</h2>
           <p>An end-to-end AIGC toolchain covering character generation, world building, vehicle and weapon design, and interactive AI — engineered for rapid cultural localization.</p>
         </div>
 
@@ -1612,47 +1668,47 @@
         <div class="modules-grid reveal" style="transition-delay:200ms;">
           <div class="module">
             <div class="module-num">01 · Core</div>
-            <h4>Prometheus<br><em>AI Agent</em></h4>
+            <h4>Prometheus <br><em>AI Agent</em></h4>
             <p>Generate full AI teams — every player or horse operates autonomously.</p>
           </div>
           <div class="module">
             <div class="module-num">02 · Cognition</div>
-            <h4>Prometheus<br><em>Mind AI</em></h4>
+            <h4>Prometheus <br><em>Mind AI</em></h4>
             <p>Equip stars with cognitive abilities and lifelike in-game behavior.</p>
           </div>
           <div class="module">
             <div class="module-num">03 · Collective</div>
-            <h4>Prometheus<br><em>Mass AI</em></h4>
+            <h4>Prometheus <br><em>Mass AI</em></h4>
             <p>Simulate team dynamics and tactics with emergent collective intelligence.</p>
           </div>
           <div class="module" data-team="motion">
             <div class="module-num">04 · Motion</div>
-            <h4>Prometheus<br><em>Motion AI</em></h4>
+            <h4>Prometheus <br><em>Motion AI</em></h4>
             <p>Physically accurate, continuously learned movement — every stride procedurally generated.</p>
           </div>
           <div class="module">
             <div class="module-num">05 · Learning</div>
-            <h4>Prometheus<br><em>ML AI</em></h4>
+            <h4>Prometheus <br><em>ML AI</em></h4>
             <p>Continuous reinforcement pipelines — agents improve match over match.</p>
           </div>
           <div class="module">
             <div class="module-num">06 · Creation</div>
-            <h4>Prometheus<br><em>Human Editor</em></h4>
+            <h4>Prometheus <br><em>Human Editor</em></h4>
             <p>Sculpt stars end-to-end — face, body, voice, personality — in minutes not months.</p>
           </div>
           <div class="module">
             <div class="module-num">07 · Vehicles</div>
-            <h4>Prometheus<br><em>Vehicle Editor</em></h4>
+            <h4>Prometheus <br><em>Vehicle Editor</em></h4>
             <p>Design fleets — from race cars to mechs — with full physics and culture parameters.</p>
           </div>
           <div class="module">
             <div class="module-num">08 · Weapons</div>
-            <h4>Prometheus<br><em>Weapon Editor</em></h4>
+            <h4>Prometheus <br><em>Weapon Editor</em></h4>
             <p>Precision tools for combat and sport — balance, behavior, and narrative baked in.</p>
           </div>
           <div class="module" data-team="world">
             <div class="module-num">09 · World</div>
-            <h4>Prometheus<br><em>World Editor</em></h4>
+            <h4>Prometheus <br><em>World Editor</em></h4>
             <p>Dynamically generate venues shaped by culture, climate, and AI evolution.</p>
           </div>
         </div>
@@ -1676,7 +1732,7 @@
       <div class="container">
         <div class="positioning-header reveal">
           <div class="eyebrow-line">III · Positioning</div>
-          <h2>The convergence of four<br><em>trillion-dollar</em> markets.</h2>
+          <h2>The convergence of four <br><em>trillion-dollar</em> markets.</h2>
           <p>We operate at the exclusive intersection of gaming, sport, digital assets, and AI — the four arenas shaping the next decade of global value.</p>
         </div>
       </div>
@@ -1801,7 +1857,7 @@
       <div class="container">
         <div class="star-maker-header reveal">
           <div class="eyebrow-line" style="justify-content:center;display:inline-flex;">The World's First <em style="font-style:italic;color:var(--color-primary);"></em>AI Star Maker</div>
-          <h2>You create the stars.<br>You operate the system. <em>You share the rewards.</em></h2>
+          <h2>You create the stars. <br>You operate the system. <em>You share the rewards.</em></h2>
           <p>Not a spectator — part of the system. Stronger performance increases asset value; deeper insight creates an edge.</p>
         </div>
         <div class="flywheel">
@@ -1849,7 +1905,7 @@
     <section class="fann-closing">
       <div class="fann-closing-ambient" aria-hidden="true"></div>
       <div class="container reveal">
-        <h2>AI forges the game.<br>You <em>own the world</em>.</h2>
+        <h2>AI forges the game. <br>You <em>own the world</em>.</h2>
         <a href="contact.html" class="fann-cta">Experience the Brand →</a>
       </div>
     </section>

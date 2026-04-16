@@ -16,12 +16,35 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Share+Tech+Mono&display=swap"></noscript>
   <link rel="stylesheet" href="styles/bundle.min.css">
   <style>
+    /* ===== Font Override ===== */
+    body { font-family: var(--font-body); }
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+    h1 em, h2 em, h3 em {
+      font-style: italic;
+      color: var(--color-primary);
+    }
+
+    /* ===== Ambient Orbs ===== */
+    @keyframes orbDrift { 0%,100%{transform:translate(0,0) scale(1)} 33%{transform:translate(4%,-5%) scale(1.06)} 66%{transform:translate(-3%,3%) scale(0.96)} }
+    @keyframes orbDrift2 { 0%,100%{transform:translate(0,0) rotate(0deg) scale(1)} 50%{transform:translate(-5%,2%) rotate(8deg) scale(1.1)} }
+    .ambient-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      will-change: transform;
+    }
+
     .page-hero {
       padding: calc(80px + var(--space-2xl)) 0 var(--space-2xl);
       position: relative;
       overflow: hidden;
     }
-    .page-hero h1 { margin-bottom: var(--space-md); }
+    .page-hero h1 { margin-bottom: var(--space-md); font-style: italic; }
     .page-hero .accent { color: var(--color-primary); }
 
     /* Mission block */
@@ -308,7 +331,7 @@
       <div class="glow-orb" style="width:500px;height:500px;background:var(--color-accent-2);top:-200px;left:-100px;"></div>
       <div class="container relative z-1">
         <p class="overline reveal" style="margin-bottom:var(--space-md);">About Mega X</p>
-        <h1 class="reveal" style="transition-delay:80ms;">Architects of the<br><span class="accent">Next Revolution</span></h1>
+        <h1 class="reveal" style="transition-delay:80ms;">Architects of the <br><span class="accent">Next Revolution</span></h1>
         <p class="text-muted reveal" style="transition-delay:160ms;font-size:var(--text-lg);max-width:48ch;">
           When AI rewrites the logic of production, the question is no longer what you build — but what you own. We own the architecture.
         </p>
@@ -316,11 +339,12 @@
     </section>
 
     <!-- Mission -->
-    <section>
-      <div class="container mission-grid">
+    <section style="position:relative;overflow:hidden;">
+      <div class="ambient-orb" style="width:500px;height:500px;top:-10%;right:-8%;background:radial-gradient(circle,rgba(212,168,78,0.06),transparent 65%);animation:orbDrift 20s ease-in-out infinite;"></div>
+      <div class="container mission-grid" style="position:relative;z-index:1;">
         <div class="mission-text reveal-left">
           <p class="overline" style="margin-bottom:var(--space-md);">Our Mission</p>
-          <h2>Redefining the Relations<br>of Production</h2>
+          <h2>Redefining the Relations <br>of <em>Production</em></h2>
           <p class="text-muted" style="margin-top:var(--space-lg);">
             Every industrial revolution rewrites who produces, who decides, and who captures value. AI is the next one — and we are building its means of production.
           </p>
@@ -346,7 +370,7 @@
       <div class="container">
         <div class="reveal" style="margin-bottom:var(--space-xl);">
           <p class="overline">Leadership</p>
-          <h2 style="margin-top:var(--space-md);">Executive Team</h2>
+          <h2 style="margin-top:var(--space-md);">Executive <em>Team</em></h2>
         </div>
 
         <div class="leader-group">
@@ -460,11 +484,12 @@
     </section>
 
     <!-- Values -->
-    <section>
-      <div class="container">
+    <section style="position:relative;overflow:hidden;">
+      <div class="ambient-orb" style="width:400px;height:400px;bottom:-10%;left:10%;background:radial-gradient(circle,rgba(212,168,78,0.05),transparent 60%);animation:orbDrift2 18s ease-in-out infinite;"></div>
+      <div class="container" style="position:relative;z-index:1;">
         <div class="reveal" style="text-align:center;max-width:500px;margin:0 auto var(--space-xl);">
           <p class="overline" style="justify-content:center;">Our Principles</p>
-          <h2 style="margin-top:var(--space-md);">What We Believe</h2>
+          <h2 style="margin-top:var(--space-md);">What We <em>Believe</em></h2>
         </div>
         <div class="values-strip reveal-scale">
           <div class="value-item">
@@ -496,7 +521,7 @@
       <div class="container">
         <div class="careers-cta reveal-scale">
           <p class="overline" style="justify-content:center;margin-bottom:var(--space-md);">Careers</p>
-          <h3>Build What Comes Next</h3>
+          <h3>Build What Comes <em>Next</em></h3>
           <p>We hire architects — of silicon, of systems, of autonomous intelligence. If you want to define the production stack of the AI era, not just optimize the last one, we should talk.</p>
           <a href="contact.html" class="btn btn-primary">View Open Roles →</a>
         </div>
