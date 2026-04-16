@@ -224,11 +224,7 @@
 
     /* Scroll hint */
     .ginni-scroll-hint {
-      position: absolute;
-      bottom: var(--space-xl);
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
+      margin-top: var(--space-xl);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -761,7 +757,7 @@
     @media (max-width: 768px) {
       .ginni-hero { min-height: 88vh; }
       .ginni-hero-inner { padding: 0 1.25rem; }
-      .ginni-scroll-hint { bottom: 1.6rem; }
+      .ginni-scroll-hint { margin-top: var(--space-md); }
       .container { padding: 0 1.25rem; }
     }
   </style>
@@ -809,10 +805,10 @@
         <h1 class="ginni-hero-title">Deploy a <em>department</em>. <br>Not a person.</h1>
         <p class="ginni-hero-sub">The world's first platform for instantly deploying AI-native productivity business units — complete, outcome-accountable, running 24/7.</p>
         <span class="ginni-hero-tag"><span class="dot"></span>AI-Workflow Factory</span>
-      </div>
-      <div class="ginni-scroll-hint">
-        <span>Scroll</span>
-        <div class="scroll-line"></div>
+        <div class="ginni-scroll-hint">
+          <span>Scroll</span>
+          <div class="scroll-line"></div>
+        </div>
       </div>
     </section>
 

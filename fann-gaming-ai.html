@@ -160,11 +160,7 @@
 
     /* Scroll hint */
     .fann-scroll-hint {
-      position: absolute;
-      bottom: var(--space-xl);
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
+      margin-top: var(--space-xl);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -1524,7 +1520,7 @@
       .fann-hero { min-height: 88vh; }
       .fann-hero-inner { padding: 0 1.25rem; }
       .fann-hero-title { font-size: clamp(2.6rem, 10vw, 4.5rem); }
-      .fann-scroll-hint { bottom: 1.6rem; }
+      .fann-scroll-hint { margin-top: var(--space-md); }
       .container { padding: 0 1.25rem; }
 
       /* Vision */
@@ -1631,10 +1627,10 @@
         <h1 class="fann-hero-title">The AI-Native <br>Game Forge.</h1>
         <p class="fann-hero-sub">The world's first AI game production line — where intelligence creates worlds, breeds champions, and exports economies at machine scale.</p>
         <span class="fann-hero-tag">AI Game Production · Prometheus Engine</span>
-      </div>
-      <div class="fann-scroll-hint">
-        <span>Scroll</span>
-        <div class="scroll-line"></div>
+        <div class="fann-scroll-hint">
+          <span>Scroll</span>
+          <div class="scroll-line"></div>
+        </div>
       </div>
     </section>
 
