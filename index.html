@@ -14,6 +14,7 @@
   <link rel="apple-touch-icon" href="assets/final-apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Share+Tech+Mono&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Share+Tech+Mono&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Share+Tech+Mono&display=swap"></noscript>
@@ -96,17 +97,64 @@
       padding: 0 var(--space-lg);
     }
     .hero-headline {
-      font-family: var(--font-display);
-      font-size: clamp(4.5rem, 10vw + 1rem, 12rem);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(6rem, 14vw + 1rem, 16rem);
       font-weight: 400;
-      font-style: italic;
-      color: #fff;
+      font-style: normal;
+      letter-spacing: 0.3em;
       line-height: 0.95;
-      letter-spacing: -0.03em;
+      transform-origin: center center;
       margin-bottom: var(--space-lg);
+      color: rgba(255, 255, 255, 0.85);
+      mix-blend-mode: screen;
+      text-shadow:
+        0 0 60px rgba(212, 168, 78, 0.35),
+        0 0 120px rgba(212, 168, 78, 0.15),
+        0 0 200px rgba(180, 140, 60, 0.1);
+      -webkit-mask-image: linear-gradient(
+        90deg,
+        rgba(0,0,0,0.3) 0%,
+        rgba(0,0,0,0.7) 25%,
+        rgba(0,0,0,1) 50%,
+        rgba(0,0,0,0.7) 75%,
+        rgba(0,0,0,0.3) 100%
+      );
+      mask-image: linear-gradient(
+        90deg,
+        rgba(0,0,0,0.3) 0%,
+        rgba(0,0,0,0.7) 25%,
+        rgba(0,0,0,1) 50%,
+        rgba(0,0,0,0.7) 75%,
+        rgba(0,0,0,0.3) 100%
+      );
       opacity: 0;
-      transform: translateY(20px);
-      animation: heroReveal 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards;
+      transform: translateY(20px) scaleY(0.82);
+      animation: heroHeadlineReveal 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards;
+    }
+    /* Glow orb behind headline */
+    .hero-headline-wrap {
+      position: relative;
+      display: inline-block;
+    }
+    .hero-headline-wrap::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 140%;
+      height: 300%;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(ellipse at center,
+        rgba(212, 168, 78, 0.12) 0%,
+        rgba(212, 168, 78, 0.05) 30%,
+        transparent 65%
+      );
+      pointer-events: none;
+      z-index: -1;
+      filter: blur(20px);
+    }
+    @keyframes heroHeadlineReveal {
+      to { opacity: 1; transform: translateY(0) scaleY(0.82); }
     }
     .hero-epigraph {
       font-family: var(--font-body);
@@ -774,8 +822,8 @@
       </video>
       <div class="hero-overlay"></div>
       <div class="hero-inner">
-        <h1 class="hero-headline">Know It All</h1>
-        <p class="hero-epigraph">Where AI builds departments, forges worlds, <br>and commands the infrastructure beneath them all.</p>
+        <div class="hero-headline-wrap"><h1 class="hero-headline">MEGA X</h1></div>
+        <p class="hero-epigraph">Join Us on Our Journey.</p>
         <a href="#main-pillars" class="hero-cta"><span class="cta-dot"></span>Explore Our Divisions</a>
         <div class="hero-scroll-hint">
           <span>Scroll</span>
