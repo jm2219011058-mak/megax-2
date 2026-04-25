@@ -84,90 +84,6 @@
     }
     .section-header.center .overline { justify-content: center; }
 
-    /* ===== Mission ===== */
-    .mission-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-2xl);
-      align-items: start;
-    }
-    .mission-text h2 {
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      line-height: 1.08;
-      margin-bottom: var(--space-lg);
-    }
-    .mission-text .body-text {
-      font-weight: 300;
-      font-size: clamp(0.95rem, 1.2vw, 1.15rem);
-      color: var(--color-text-muted);
-      line-height: 1.85;
-    }
-    .mission-text .body-text + .body-text {
-      margin-top: var(--space-md);
-    }
-    .mission-visual {
-      background: rgba(255,255,255,0.02);
-      backdrop-filter: blur(16px) saturate(1.2);
-      -webkit-backdrop-filter: blur(16px) saturate(1.2);
-      border: none;
-      border-radius: var(--radius-glass);
-      padding: clamp(1.8rem, 3vw, 2.5rem);
-      position: relative;
-      overflow: hidden;
-      box-shadow:
-        inset 0 1px 1px rgba(255,255,255,0.08),
-        0 6px 28px rgba(0,0,0,0.25);
-    }
-    .mission-visual::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      padding: 1px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 50%, rgba(212,168,78,0.06) 100%);
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events: none;
-    }
-    .mission-visual .pillar-label {
-      color: var(--color-primary);
-      font-weight: 600;
-      font-size: clamp(0.9rem, 1.1vw, 1.05rem);
-      margin-bottom: var(--space-lg);
-    }
-    .mission-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .mission-list li {
-      position: relative;
-      padding-left: 1.75rem;
-      margin-bottom: var(--space-md);
-      font-size: clamp(0.9rem, 1.1vw, 1.05rem);
-      color: var(--color-text-muted);
-      line-height: 1.8;
-    }
-    .mission-list li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0.55rem;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--color-primary);
-      box-shadow: 0 0 8px rgba(212,168,78,0.3);
-    }
-    .mission-list .highlight {
-      color: var(--color-primary);
-      font-weight: 600;
-    }
-    @media (max-width: 900px) {
-      .mission-grid { grid-template-columns: 1fr; }
-    }
-
     /* ===== Leadership ===== */
     .leader-group {
       margin-bottom: clamp(3rem, 5vw, 5rem);
@@ -401,31 +317,6 @@
       </div>
     </section>
 
-    <!-- ===== MISSION ===== -->
-    <section class="section-block">
-      <div class="ambient-orb" style="width:500px;height:500px;top:-10%;right:-8%;background:radial-gradient(circle,rgba(212,168,78,0.06),transparent 65%);animation:orbDrift 20s ease-in-out infinite;"></div>
-      <div class="container mission-grid" style="position:relative;z-index:1;">
-        <div class="mission-text reveal-left">
-          <p class="overline" style="margin-bottom:var(--space-md);">Our Mission</p>
-          <h2>Redefining the Relations <br>of <em>Production</em></h2>
-          <p class="body-text" style="margin-top:var(--space-lg);">
-            Every industrial revolution rewrites who produces, who decides, and who captures value. AI is the next one — and we are building its means of production.
-          </p>
-          <p class="body-text">
-            Autonomous agents replace departments. Generative engines replace studios. Sovereign silicon replaces dependency. This is not iteration — it is a structural shift in how value is created.
-          </p>
-        </div>
-        <div class="mission-visual reveal-right">
-          <div class="pillar-label">Three pillars of the new production stack</div>
-          <ul class="mission-list">
-            <li><span class="highlight">Autonomy</span> — AI-native business units that operate at machine speed with human intent.</li>
-            <li><span class="highlight">Intelligence</span> — Generative engines that forge entire worlds, economies, and experiences.</li>
-            <li><span class="highlight">Infrastructure</span> — The silicon, spectrum, and connectivity that underlies everything above.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
     <!-- ===== LEADERSHIP ===== -->
     <section id="leadership" class="section-block" style="background:var(--color-surface);">
       <div class="container">
@@ -454,6 +345,18 @@
               <h4 class="team-name">Ms. Faiqa Islam</h4>
               <div class="team-position">CoFounder & CIO</div>
               <p class="team-bio">Former Intel leader. Orchestrates cross-border investment flows across the Gulf and Asia. Founder of EliteIkon Global with 10,000+ investors per year.</p>
+            </article>
+            <article class="team-card reveal">
+              <img class="team-avatar" src="assets/team/jacques-mak.png" alt="Jacques Mak">
+              <h4 class="team-name">Jacques Mak</h4>
+              <div class="team-position">Co-Founder</div>
+              <p class="team-bio">Co-Founder of Figure S — AI-native immersive character platform. VP, Unimine Tech — UE5 UGC platform & zero-code world editor. Global-scale architectures with long-horizon capital partners. Dual degree: Synthetic Biology + Engineering Design, UC Davis.</p>
+            </article>
+            <article class="team-card reveal">
+              <img class="team-avatar" src="assets/team/jianyu-zhang.png" alt="Jianyu Zhang">
+              <h4 class="team-name">Jianyu Zhang</h4>
+              <div class="team-position">Co-Founder</div>
+              <p class="team-bio">20+ years in game engines & large-scale digital systems. Co-founded Youmi Entertainment — RMB 150M angel from TikTok. Built world's first AI-native AAA game architecture. APAAS virtual world platform — UGC, AIGC & AI orchestration.</p>
             </article>
             <article class="team-card reveal">
               <img class="team-avatar" src="assets/team/zhiyong-jiang.png" alt="Mr. Zhiyong Jiang">

@@ -440,10 +440,10 @@
       <div class="chip-hero-gradient"></div>
       <div class="container chip-hero-content">
         <p class="overline reveal" style="margin-bottom:var(--space-lg);">IoT Chip & Robotics Division</p>
-        <h1 class="reveal" style="transition-delay:100ms;">Six Product Lines. <br>One Unified <em>Platform</em>.</h1>
-        <p class="chip-hero-sub reveal" style="transition-delay:200ms;">The nervous system beneath every AI agent and autonomous economy — from sub-1 GHz sensors to Wi-Fi 7 enterprise silicon.</p>
+        <h1 class="reveal" style="transition-delay:100ms;">Top 3 Global Wi-Fi 7 <br>& Wi-Fi HaLow <em>Supplier</em></h1>
+        <p class="chip-hero-sub reveal" style="transition-delay:200ms;">Sovereign connectivity silicon from sub-1 GHz HaLow sensors to Wi-Fi 7 tri-band enterprise routers — powering the infrastructure beneath every AI agent and autonomous economy.</p>
         <div class="chip-hero-stats reveal" style="transition-delay:300ms;">
-          <div class="stat"><div class="stat-value">6</div><div class="stat-label">Chip Product Lines</div></div>
+          <div class="stat"><div class="stat-value">Top 3</div><div class="stat-label">Global Wi-Fi Supplier</div></div>
           <div class="stat"><div class="stat-value">$1.5B</div><div class="stat-label">Revenue Target 2031</div></div>
           <div class="stat"><div class="stat-value">22nm</div><div class="stat-label">Leading Node</div></div>
           <div class="stat"><div class="stat-value">60%</div><div class="stat-label">Peak Gross Margin</div></div>
@@ -469,56 +469,110 @@
       </div>
     </section>
 
-    <!-- ===== PRODUCT PORTFOLIO ===== -->
+    <!-- ===== CORE PRODUCTS ===== -->
     <section id="portfolio" class="section-block" style="background:var(--color-surface);">
+      <style>
+        .pcard-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+        @media (max-width: 1000px) { .pcard-grid { grid-template-columns: 1fr; } }
+        .pcard { position: relative; border-radius: 24px; overflow: hidden;
+          background: rgba(255,255,255,0.025); cursor: pointer;
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 12px 48px rgba(0,0,0,0.4);
+          transition: all 0.6s var(--ease-out); display: flex; flex-direction: column;
+          min-height: 520px; text-decoration: none; color: inherit; }
+        .pcard::before { content: ''; position: absolute; inset: 0; border-radius: inherit;
+          padding: 1px; pointer-events: none; z-index: 3;
+          background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.02));
+          -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+          -webkit-mask-composite: xor; mask-composite: exclude;
+          transition: background 0.5s var(--ease-out); }
+        .pcard:hover { transform: translateY(-6px);
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 24px 72px rgba(0,0,0,0.55); }
+        .pcard:hover::before { background: linear-gradient(180deg, var(--pcaccent), rgba(255,255,255,0.05) 60%); }
+        .pcard-img { position: relative; height: 280px; overflow: hidden; }
+        .pcard-img img { width: 100%; height: 100%; object-fit: cover;
+          transition: transform 0.8s var(--ease-out); }
+        .pcard:hover .pcard-img img { transform: scale(1.06); }
+        .pcard-img::after { content: ''; position: absolute; inset: 0;
+          background: linear-gradient(180deg, transparent 30%, rgba(7,9,15,0.85)); }
+        .pcard-num { position: absolute; top: 24px; left: 24px; z-index: 2;
+          font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.24em;
+          text-transform: uppercase; color: var(--pcaccent); }
+        .pcard-num::before { content: ''; display: inline-block; width: 32px; height: 1px;
+          background: var(--pcaccent); margin-right: 12px; vertical-align: middle; }
+        .pcard-body { padding: 32px 28px 32px; flex: 1; display: flex; flex-direction: column; }
+        .pcard-body h3 { font-family: var(--font-display); font-weight: 400;
+          font-size: 2.4rem; letter-spacing: -0.018em; line-height: 1; margin-bottom: 8px; }
+        .pcard-body h3 em { font-style: italic; color: var(--pcaccent); }
+        .pcard-body .tag { font-family: var(--font-mono); font-size: 11px;
+          letter-spacing: 0.22em; text-transform: uppercase;
+          color: rgba(255,255,255,0.5); margin-bottom: 18px; }
+        .pcard-body p { font-size: 15px; font-weight: 300; line-height: 1.6;
+          color: var(--color-text-muted); margin-bottom: 20px; }
+        .pcard-meta { margin-top: auto; padding-top: 18px;
+          border-top: 1px solid rgba(255,255,255,0.06);
+          display: flex; align-items: center; justify-content: space-between;
+          font-family: var(--font-mono); font-size: 11px;
+          letter-spacing: 0.18em; text-transform: uppercase; }
+        .pcard-meta .domains { color: rgba(255,255,255,0.55); }
+        .pcard-meta .arrow { color: var(--pcaccent);
+          transition: transform 0.4s var(--ease-out); }
+        .pcard:hover .pcard-meta .arrow { transform: translateX(4px); }
+      </style>
       <div class="container">
         <div class="section-header reveal">
-          <p class="overline">Product Portfolio</p>
-          <h2>The <em>Silicon</em></h2>
+          <p class="overline">Core Products</p>
+          <h2>Three <em>Chips</em>. One Connectivity Thesis.</h2>
         </div>
-        <div class="product-grid stagger">
-          <div class="product-card reveal">
-            <span class="product-chip">Wi-Fi HaLow · 802.11ah</span>
-            <h4>G-Link Series</h4>
-            <p class="desc">Sub-1 GHz long-range IoT connectivity for smart city, agriculture, and industrial applications. TSMC 40nm.</p>
-            <div class="product-asp">$6 <span>/ unit ASP</span></div>
-            <div class="product-meta">60% gross margin · Mass production Q3 2026</div>
-          </div>
-          <div class="product-card reveal">
-            <span class="product-chip">Wi-Fi 6 SoC</span>
-            <h4>2×2 + BT 5.4 SoC</h4>
-            <p class="desc">Station-mode system-on-chip for consumer electronics — TV boxes, tablets, smart home devices. GF 22nm.</p>
-            <div class="product-asp">$3 <span>/ unit ASP</span></div>
-            <div class="product-meta">40% gross margin · Production-ready Q2 2026</div>
-          </div>
-          <div class="product-card reveal">
-            <span class="product-chip">Wi-Fi 6/6e/7 RF</span>
-            <h4>Freya Transceiver</h4>
-            <p class="desc">High-performance 4×4 RF transceiver for enterprise routers, drones, and 5G-NR base stations. TSMC 28nm.</p>
-            <div class="product-asp">$20 <span>/ unit ASP</span></div>
-            <div class="product-meta">60% gross margin · Mass production Q3 2026</div>
-          </div>
-          <div class="product-card reveal">
-            <span class="product-chip">Wi-Fi 7 Baseband</span>
-            <h4>4×4 AP Baseband</h4>
-            <p class="desc">Next-generation access point baseband positioning Mega X among the global top-5 Wi-Fi 7 silicon vendors. TSMC 28nm.</p>
-            <div class="product-asp">$30 <span>/ unit ASP</span></div>
-            <div class="product-meta">60% gross margin · Target Q3 2027</div>
-          </div>
-          <div class="product-card reveal">
-            <span class="product-chip">Wi-Fi 7 AP SoC</span>
-            <h4>2×2 Mid-Range SoC</h4>
-            <p class="desc">Integrated transceiver + baseband for mid-range routers. Targeting the $75M+ annual router chip market. GF 22nm.</p>
-            <div class="product-asp">$15 <span>/ unit ASP</span></div>
-            <div class="product-meta">50% gross margin · Target Q3 2027</div>
-          </div>
-          <div class="product-card reveal">
-            <span class="product-chip">Edge AI · Robotics</span>
-            <h4>Joint Neural Network</h4>
-            <p class="desc">Neural network inference at the robotic joint level — enabling intelligent motion control for industrial automation.</p>
-            <div class="product-asp">$10 <span>/ unit ASP</span></div>
-            <div class="product-meta">50% gross margin · Chip sales Q1 2028</div>
-          </div>
+        <div class="pcard-grid stagger">
+
+          <a href="products/freya.html" class="pcard reveal" style="--pcaccent:#D4A84E;">
+            <div class="pcard-img">
+              <span class="pcard-num">01 · Freya</span>
+              <img src="chipnexus-content/05-product-freya/freya-visual.jpeg" alt="Freya" loading="lazy">
+            </div>
+            <div class="pcard-body">
+              <div class="tag">Programmable RF Transceiver</div>
+              <h3><em>Freya</em></h3>
+              <p>One software-defined silicon spanning sub-1 GHz to Wi-Fi 7. Routers, smart cities, V2X, defense — retuned in firmware, not respun in fab.</p>
+              <div class="pcard-meta">
+                <span class="domains">07 Domains · 28 Apps</span>
+                <span class="arrow">Explore →</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="products/glink.html" class="pcard reveal" style="--pcaccent:#5BA0E8;">
+            <div class="pcard-img">
+              <span class="pcard-num">02 · G-Link</span>
+              <img src="chipnexus-content/06-product-glink/glink-intro.jpeg" alt="G-Link" loading="lazy">
+            </div>
+            <div class="pcard-body">
+              <div class="tag">Wi-Fi HaLow · Long-Range IoT</div>
+              <h3><em>G-Link</em></h3>
+              <p>Kilometre-scale connectivity at coin-cell power. The fabric beneath smart cities, grids, agriculture, and the long tail of connected infrastructure.</p>
+              <div class="pcard-meta">
+                <span class="domains">06 Domains · 20 Apps</span>
+                <span class="arrow">Explore →</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="products/flexv.html" class="pcard reveal" style="--pcaccent:#B8B0C8;">
+            <div class="pcard-img">
+              <span class="pcard-num">03 · FlexV</span>
+              <img src="chipnexus-content/07-product-flexv/flexv-intro.jpeg" alt="FlexV" loading="lazy">
+            </div>
+            <div class="pcard-body">
+              <div class="tag">Software-Defined Radio</div>
+              <h3><em>FlexV</em></h3>
+              <p>A defense-grade SDR platform that turns silicon into a moving target — adapting waveforms faster than any adversary can characterize them.</p>
+              <div class="pcard-meta">
+                <span class="domains">04 Domains · 15 Apps</span>
+                <span class="arrow">Explore →</span>
+              </div>
+            </div>
+          </a>
+
         </div>
       </div>
     </section>

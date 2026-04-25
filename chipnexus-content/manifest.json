@@ -1,0 +1,1089 @@
+{
+  "generated": "2026-04-20",
+  "source": "Mega X ChipNexus Hub Presentation (69 slides)",
+  "totalImages": 130,
+  "skippedImages": {
+    "image18.png": "Dark background template used on slides 16-28, 41-46, 51-53. Not copied to any section folder."
+  },
+  "sections": [
+    {
+      "folder": "00-cover-and-intro",
+      "title": "Cover and Introduction",
+      "slides": "1-7"
+    },
+    {
+      "folder": "01-market-and-strategy",
+      "title": "Market and Strategy",
+      "slides": "8-9"
+    },
+    {
+      "folder": "02-ecosystem-framework",
+      "title": "Ecosystem Framework",
+      "slides": "10-14"
+    },
+    {
+      "folder": "03-technology-foundation",
+      "title": "Technology Foundation",
+      "slides": "15-18"
+    },
+    {
+      "folder": "04-founding-team",
+      "title": "Founding Team",
+      "slides": "19-28"
+    },
+    {
+      "folder": "05-product-freya",
+      "title": "Product: Freya RF Transceiver",
+      "slides": "29-48"
+    },
+    {
+      "folder": "06-product-glink",
+      "title": "Product: G-Link HaLow Chip",
+      "slides": "49-59"
+    },
+    {
+      "folder": "07-product-flexv",
+      "title": "Product: FlexV SDR Platform",
+      "slides": "60-66"
+    },
+    {
+      "folder": "08-product-overview",
+      "title": "Product Overview and Closing",
+      "slides": "67-69"
+    }
+  ],
+  "images": [
+    {
+      "filename": "cover-background.jpeg",
+      "original": "image1.jpeg",
+      "section": "00-cover-and-intro",
+      "slide": 1,
+      "caption": "Cover background image",
+      "description": "Background image for the presentation cover slide"
+    },
+    {
+      "filename": "cover-global-reach.jpeg",
+      "original": "image2.jpeg",
+      "section": "00-cover-and-intro",
+      "slide": 1,
+      "caption": "GLOBAL REACH / Mega X ChipNexus Hub",
+      "description": "Main cover graphic with Global Reach branding. Also reused on slide 43."
+    },
+    {
+      "filename": "copyright-notice.jpeg",
+      "original": "image3.jpeg",
+      "section": "00-cover-and-intro",
+      "slide": 2,
+      "caption": "Copyright Notice",
+      "description": "Copyright and legal disclaimer page"
+    },
+    {
+      "filename": "vision-core-hub.jpeg",
+      "original": "image4.jpeg",
+      "section": "00-cover-and-intro",
+      "slide": 3,
+      "caption": "The Core Hub for WiFi & AI Chip & Integrated Computing Infrastructure",
+      "description": "Vision statement visual"
+    },
+    {
+      "filename": "full-band-wifi-chipset.jpeg",
+      "original": "image5.jpeg",
+      "section": "00-cover-and-intro",
+      "slide": 4,
+      "caption": "World's Only Provider of Full-band Wi-Fi Chipset Solutions",
+      "description": "Company introduction highlighting unique market position"
+    },
+    {
+      "filename": "market-capex-chart-3.png",
+      "original": "image6.png",
+      "section": "00-cover-and-intro",
+      "slide": 5,
+      "caption": "CapEx growth chart",
+      "description": "Market capital expenditure growth data visualization"
+    },
+    {
+      "filename": "market-capex-chart-2.png",
+      "original": "image7.png",
+      "section": "00-cover-and-intro",
+      "slide": 5,
+      "caption": "CapEx growth chart",
+      "description": "Market capital expenditure growth data visualization"
+    },
+    {
+      "filename": "market-capex-chart-1.png",
+      "original": "image8.png",
+      "section": "00-cover-and-intro",
+      "slide": 5,
+      "caption": "CapEx growth chart",
+      "description": "Market capital expenditure growth from $430B to $1.1T"
+    },
+    {
+      "filename": "market-capex-data-2.png",
+      "original": "image9.png",
+      "section": "00-cover-and-intro",
+      "slide": 5,
+      "caption": "Supporting market data",
+      "description": "Supporting market data graphic"
+    },
+    {
+      "filename": "market-capex-data-1.png",
+      "original": "image10.png",
+      "section": "00-cover-and-intro",
+      "slide": 5,
+      "caption": "Supporting market data",
+      "description": "Supporting market data graphic"
+    },
+    {
+      "filename": "next-gen-chip-visual.jpeg",
+      "original": "image11.jpeg",
+      "section": "00-cover-and-intro",
+      "slide": 6,
+      "caption": "Next-Generation Chip",
+      "description": "Next-generation chip hero visual"
+    },
+    {
+      "filename": "chipnexus-intro.jpeg",
+      "original": "image12.jpeg",
+      "section": "00-cover-and-intro",
+      "slide": 7,
+      "caption": "ChipNexus Introduction",
+      "description": "ChipNexus platform introduction visual"
+    },
+    {
+      "filename": "market-coverage-wifi-ai.jpeg",
+      "original": "image13.jpeg",
+      "section": "01-market-and-strategy",
+      "slide": 8,
+      "caption": "Market Coverage: Wi-Fi 6/7 CAGR 18-22%, AI Compute CAGR 37%, TAM $655B",
+      "description": "Market coverage infographic with key growth metrics"
+    },
+    {
+      "filename": "wifi-market-outlook.jpeg",
+      "original": "image14.jpeg",
+      "section": "01-market-and-strategy",
+      "slide": 9,
+      "caption": "Wi-Fi Market Outlook",
+      "description": "Wi-Fi market outlook and forecast"
+    },
+    {
+      "filename": "next-gen-chip-hub-cover.jpeg",
+      "original": "image15.jpeg",
+      "section": "02-ecosystem-framework",
+      "slide": 10,
+      "caption": "Next-Gen Chip Hub",
+      "description": "Section cover for the ecosystem framework section"
+    },
+    {
+      "filename": "business-model-canvas.png",
+      "original": "image16.png",
+      "section": "02-ecosystem-framework",
+      "slide": 13,
+      "caption": "Business Model Canvas",
+      "description": "Business Model Canvas diagram"
+    },
+    {
+      "filename": "rf-chips-industry-background.jpeg",
+      "original": "image17.jpeg",
+      "section": "03-technology-foundation",
+      "slide": 15,
+      "caption": "RF Chips Industry Background",
+      "description": "RF chips industry overview"
+    },
+    {
+      "filename": "rfid-chip-rice-grain.webp",
+      "original": "image19.webp",
+      "section": "03-technology-foundation",
+      "slide": 16,
+      "caption": "RFID chips can be rice-grain sized",
+      "description": "Visual showing RFID chip at rice-grain scale"
+    },
+    {
+      "filename": "rfid-chip-diagram.png",
+      "original": "image20.png",
+      "section": "03-technology-foundation",
+      "slide": 16,
+      "caption": "RFID chip technical diagram",
+      "description": "RFID chip architecture diagram"
+    },
+    {
+      "filename": "sdr-explanation-diagram.png",
+      "original": "image21.png",
+      "section": "03-technology-foundation",
+      "slide": 17,
+      "caption": "Software-Defined Radio (SDR)",
+      "description": "SDR architecture and explanation diagram"
+    },
+    {
+      "filename": "key-advantages-diagram.png",
+      "original": "image22.png",
+      "section": "03-technology-foundation",
+      "slide": 18,
+      "caption": "Key Advantages",
+      "description": "Key advantages diagram/infographic"
+    },
+    {
+      "filename": "key-advantages-visual.jpeg",
+      "original": "image23.jpeg",
+      "section": "03-technology-foundation",
+      "slide": 18,
+      "caption": "Key Advantages",
+      "description": "Key advantages hero visual"
+    },
+    {
+      "filename": "anjum-malik-portrait.png",
+      "original": "image24.png",
+      "section": "04-founding-team",
+      "slide": 19,
+      "caption": "Anjum Malik — Founder & Chairman",
+      "description": "Portrait photo of Anjum Malik"
+    },
+    {
+      "filename": "sean-chan-portrait.png",
+      "original": "image25.png",
+      "section": "04-founding-team",
+      "slide": 20,
+      "caption": "Sean Chan — CFO",
+      "description": "Portrait photo of Sean Chan"
+    },
+    {
+      "filename": "faiqa-islam-portrait.png",
+      "original": "image26.png",
+      "section": "04-founding-team",
+      "slide": 20,
+      "caption": "Faiqa Islam — CIO",
+      "description": "Portrait photo of Faiqa Islam"
+    },
+    {
+      "filename": "jamie-zhang-portrait.png",
+      "original": "image27.png",
+      "section": "04-founding-team",
+      "slide": 21,
+      "caption": "Jamie Zhang — Co-Founder",
+      "description": "Portrait photo of Jamie Zhang"
+    },
+    {
+      "filename": "zhiyong-jiang-portrait.png",
+      "original": "image28.png",
+      "section": "04-founding-team",
+      "slide": 22,
+      "caption": "Zhiyong Jiang — CEO",
+      "description": "Portrait photo of Zhiyong Jiang"
+    },
+    {
+      "filename": "kevin-steptoe-portrait.png",
+      "original": "image29.png",
+      "section": "04-founding-team",
+      "slide": 23,
+      "caption": "Kevin Steptoe — CTO",
+      "description": "Portrait photo of Kevin Steptoe"
+    },
+    {
+      "filename": "roy-jewell-portrait.png",
+      "original": "image30.png",
+      "section": "04-founding-team",
+      "slide": 24,
+      "caption": "Roy Jewell",
+      "description": "Portrait photo of Roy Jewell"
+    },
+    {
+      "filename": "rebecca-qiu-portrait.png",
+      "original": "image31.png",
+      "section": "04-founding-team",
+      "slide": 24,
+      "caption": "Rebecca Qiu",
+      "description": "Portrait photo of Rebecca Qiu"
+    },
+    {
+      "filename": "cao-xuguang-portrait.png",
+      "original": "image32.png",
+      "section": "04-founding-team",
+      "slide": 25,
+      "caption": "Cao Xuguang — RF Engineering Lead",
+      "description": "Portrait photo of Cao Xuguang"
+    },
+    {
+      "filename": "jade-chip-engineering-portrait.png",
+      "original": "image33.png",
+      "section": "04-founding-team",
+      "slide": 25,
+      "caption": "Jade — Chip Engineering Lead",
+      "description": "Portrait photo of Jade"
+    },
+    {
+      "filename": "dr-han-rf-analog-portrait.png",
+      "original": "image34.png",
+      "section": "04-founding-team",
+      "slide": 26,
+      "caption": "Dr. Han — RF/Analog Design Lead",
+      "description": "Portrait photo of Dr. Han"
+    },
+    {
+      "filename": "dr-z-wifi-architect-portrait.png",
+      "original": "image35.png",
+      "section": "04-founding-team",
+      "slide": 26,
+      "caption": "Dr. Z — Wi-Fi Architect",
+      "description": "Portrait photo of Dr. Z"
+    },
+    {
+      "filename": "dr-mingxian-feng-portrait.png",
+      "original": "image36.png",
+      "section": "04-founding-team",
+      "slide": 27,
+      "caption": "Dr. Mingxian Feng — TSMC / Advanced Process Lead",
+      "description": "Portrait photo of Dr. Mingxian Feng"
+    },
+    {
+      "filename": "john-long-portrait.jpeg",
+      "original": "image37.jpeg",
+      "section": "04-founding-team",
+      "slide": 27,
+      "caption": "John Long — Manufacturing Lead",
+      "description": "Portrait photo of John Long"
+    },
+    {
+      "filename": "nicky-wilkinson-portrait.png",
+      "original": "image38.png",
+      "section": "04-founding-team",
+      "slide": 28,
+      "caption": "Nicky Wilkinson — Core UK Tech Team",
+      "description": "Portrait photo of Nicky Wilkinson"
+    },
+    {
+      "filename": "jonathan-kimmitt-portrait.png",
+      "original": "image39.png",
+      "section": "04-founding-team",
+      "slide": 28,
+      "caption": "Jonathan Kimmitt — Core UK Tech Team",
+      "description": "Portrait photo of Jonathan Kimmitt"
+    },
+    {
+      "filename": "robert-young-portrait.png",
+      "original": "image40.png",
+      "section": "04-founding-team",
+      "slide": 28,
+      "caption": "Robert Young — Core UK Tech Team",
+      "description": "Portrait photo of Robert Young"
+    },
+    {
+      "filename": "core-products-cover.jpeg",
+      "original": "image41.jpeg",
+      "section": "05-product-freya",
+      "slide": 29,
+      "caption": "Core Products",
+      "description": "Section cover for Core Products"
+    },
+    {
+      "filename": "freya-rf-transceiver-intro.png",
+      "original": "image42.png",
+      "section": "05-product-freya",
+      "slide": 30,
+      "caption": "Freya — High-Performance Programmable RF Transceiver",
+      "description": "Freya product introduction graphic"
+    },
+    {
+      "filename": "freya-visual.jpeg",
+      "original": "image43.jpeg",
+      "section": "05-product-freya",
+      "slide": 31,
+      "caption": "Freya Product Visual",
+      "description": "Freya product hero visual"
+    },
+    {
+      "filename": "freya-market-size.jpeg",
+      "original": "image44.jpeg",
+      "section": "05-product-freya",
+      "slide": 32,
+      "caption": "RF Transceiver Market: $35.7B (2025) to $80.8B (2033), CAGR 9.5%",
+      "description": "Market size projection chart"
+    },
+    {
+      "filename": "national-digital-sovereignty.jpeg",
+      "original": "image45.jpeg",
+      "section": "05-product-freya",
+      "slide": 33,
+      "caption": "National Digital Sovereignty",
+      "description": "National digital sovereignty and strategic importance"
+    },
+    {
+      "filename": "scenario-consumer-wireless-audio-video.jpeg",
+      "original": "image46.jpeg",
+      "section": "05-product-freya",
+      "slide": 34,
+      "caption": "Wireless Audio/Video",
+      "description": "Consumer scenario: wireless audio and video streaming"
+    },
+    {
+      "filename": "scenario-consumer-ar-vr.jpeg",
+      "original": "image47.jpeg",
+      "section": "05-product-freya",
+      "slide": 34,
+      "caption": "AR/VR",
+      "description": "Consumer scenario: augmented and virtual reality"
+    },
+    {
+      "filename": "scenario-consumer-smart-home.jpeg",
+      "original": "image48.jpeg",
+      "section": "05-product-freya",
+      "slide": 34,
+      "caption": "Smart Home",
+      "description": "Consumer scenario: smart home device ecosystem"
+    },
+    {
+      "filename": "scenario-consumer-mesh-network.jpeg",
+      "original": "image49.jpeg",
+      "section": "05-product-freya",
+      "slide": 34,
+      "caption": "Mesh Network",
+      "description": "Consumer scenario: whole-home mesh networking"
+    },
+    {
+      "filename": "scenario-consumer-wifi-router.jpeg",
+      "original": "image50.jpeg",
+      "section": "05-product-freya",
+      "slide": 34,
+      "caption": "Wi-Fi Router",
+      "description": "Consumer scenario: home Wi-Fi router"
+    },
+    {
+      "filename": "scenario-iot-asset-tracking.png",
+      "original": "image51.png",
+      "section": "05-product-freya",
+      "slide": 35,
+      "caption": "Asset Tracking",
+      "description": "IoT scenario: asset tracking solutions"
+    },
+    {
+      "filename": "scenario-iot-agriculture.png",
+      "original": "image52.png",
+      "section": "05-product-freya",
+      "slide": 35,
+      "caption": "Smart Agriculture",
+      "description": "IoT scenario: agricultural monitoring"
+    },
+    {
+      "filename": "scenario-iot-smart-meters.jpeg",
+      "original": "image53.jpeg",
+      "section": "05-product-freya",
+      "slide": 35,
+      "caption": "Smart Meters",
+      "description": "IoT scenario: utility metering"
+    },
+    {
+      "filename": "scenario-iot-smart-city.jpeg",
+      "original": "image54.jpeg",
+      "section": "05-product-freya",
+      "slide": 35,
+      "caption": "Smart City",
+      "description": "IoT scenario: urban IoT infrastructure"
+    },
+    {
+      "filename": "scenario-iot-halow.jpeg",
+      "original": "image55.jpeg",
+      "section": "05-product-freya",
+      "slide": 35,
+      "caption": "Wi-Fi HaLow",
+      "description": "IoT scenario: long-range low-power connectivity"
+    },
+    {
+      "filename": "scenario-industrial-plc.png",
+      "original": "image56.png",
+      "section": "05-product-freya",
+      "slide": 36,
+      "caption": "PLC",
+      "description": "Industrial scenario: programmable logic controller"
+    },
+    {
+      "filename": "scenario-industrial-private-network.jpeg",
+      "original": "image57.jpeg",
+      "section": "05-product-freya",
+      "slide": 36,
+      "caption": "Private Network",
+      "description": "Industrial scenario: private wireless network"
+    },
+    {
+      "filename": "scenario-industrial-machine-vision.jpeg",
+      "original": "image58.jpeg",
+      "section": "05-product-freya",
+      "slide": 36,
+      "caption": "Machine Vision",
+      "description": "Industrial scenario: machine vision systems"
+    },
+    {
+      "filename": "scenario-industrial-agv-amr.jpeg",
+      "original": "image59.jpeg",
+      "section": "05-product-freya",
+      "slide": 36,
+      "caption": "AGV/AMR",
+      "description": "Industrial scenario: automated guided vehicles"
+    },
+    {
+      "filename": "scenario-industrial-automation.jpeg",
+      "original": "image60.jpeg",
+      "section": "05-product-freya",
+      "slide": 36,
+      "caption": "Industrial Automation",
+      "description": "Industrial scenario: factory automation"
+    },
+    {
+      "filename": "scenario-comms-carrier-infra.png",
+      "original": "image61.png",
+      "section": "05-product-freya",
+      "slide": 37,
+      "caption": "Carrier Infrastructure",
+      "description": "Communications scenario: telecom carrier infrastructure"
+    },
+    {
+      "filename": "scenario-comms-backhaul.jpeg",
+      "original": "image62.jpeg",
+      "section": "05-product-freya",
+      "slide": 37,
+      "caption": "Backhaul",
+      "description": "Communications scenario: network backhaul"
+    },
+    {
+      "filename": "scenario-comms-satellite.jpeg",
+      "original": "image63.jpeg",
+      "section": "05-product-freya",
+      "slide": 37,
+      "caption": "Satellite",
+      "description": "Communications scenario: satellite communications"
+    },
+    {
+      "filename": "scenario-comms-cpe.png",
+      "original": "image64.png",
+      "section": "05-product-freya",
+      "slide": 37,
+      "caption": "CPE",
+      "description": "Communications scenario: customer premises equipment"
+    },
+    {
+      "filename": "scenario-comms-5g-small-cell.jpeg",
+      "original": "image65.jpeg",
+      "section": "05-product-freya",
+      "slide": 37,
+      "caption": "5G Small Cell",
+      "description": "Communications scenario: 5G small cell deployment"
+    },
+    {
+      "filename": "scenario-auto-in-car-wifi.png",
+      "original": "image66.png",
+      "section": "05-product-freya",
+      "slide": 38,
+      "caption": "In-Car WiFi",
+      "description": "Automotive scenario: in-vehicle wireless"
+    },
+    {
+      "filename": "scenario-auto-autonomous-driving.jpeg",
+      "original": "image67.jpeg",
+      "section": "05-product-freya",
+      "slide": 38,
+      "caption": "Autonomous Driving",
+      "description": "Automotive scenario: self-driving vehicle connectivity"
+    },
+    {
+      "filename": "scenario-auto-rsu.jpeg",
+      "original": "image68.jpeg",
+      "section": "05-product-freya",
+      "slide": 38,
+      "caption": "RSU (Roadside Unit)",
+      "description": "Automotive scenario: roadside units for V2X"
+    },
+    {
+      "filename": "scenario-auto-v2x.jpeg",
+      "original": "image69.jpeg",
+      "section": "05-product-freya",
+      "slide": 38,
+      "caption": "V2X",
+      "description": "Automotive scenario: vehicle-to-everything communication"
+    },
+    {
+      "filename": "scenario-defense-drone-link.jpeg",
+      "original": "image70.jpeg",
+      "section": "05-product-freya",
+      "slide": 39,
+      "caption": "Drone Link",
+      "description": "Defense scenario: UAV communication links"
+    },
+    {
+      "filename": "scenario-defense-tactical.jpeg",
+      "original": "image71.jpeg",
+      "section": "05-product-freya",
+      "slide": 39,
+      "caption": "Tactical Communications",
+      "description": "Defense scenario: battlefield tactical comms"
+    },
+    {
+      "filename": "scenario-defense-sdr.jpeg",
+      "original": "image72.jpeg",
+      "section": "05-product-freya",
+      "slide": 39,
+      "caption": "Software-Defined Radio",
+      "description": "Defense scenario: military SDR platforms"
+    },
+    {
+      "filename": "scenario-defense-encrypted-comms.png",
+      "original": "image73.png",
+      "section": "05-product-freya",
+      "slide": 39,
+      "caption": "Encrypted Communications",
+      "description": "Defense scenario: military-grade encrypted comms"
+    },
+    {
+      "filename": "scenario-emerging-edge-ai-lpwan.jpeg",
+      "original": "image74.jpeg",
+      "section": "05-product-freya",
+      "slide": 40,
+      "caption": "Edge AI / LPWAN",
+      "description": "Emerging scenario: edge AI and LPWAN integration"
+    },
+    {
+      "filename": "scenario-emerging-xr.jpeg",
+      "original": "image75.jpeg",
+      "section": "05-product-freya",
+      "slide": 40,
+      "caption": "Extended Reality (XR)",
+      "description": "Emerging scenario: XR wireless connectivity"
+    },
+    {
+      "filename": "scenario-emerging-robot-swarm.jpeg",
+      "original": "image76.jpeg",
+      "section": "05-product-freya",
+      "slide": 40,
+      "caption": "Robot Swarm",
+      "description": "Emerging scenario: multi-robot swarm coordination"
+    },
+    {
+      "filename": "scenario-emerging-robot-wireless-bus.jpeg",
+      "original": "image77.jpeg",
+      "section": "05-product-freya",
+      "slide": 40,
+      "caption": "Robot Wireless Bus",
+      "description": "Emerging scenario: wireless bus for robotics"
+    },
+    {
+      "filename": "freya-technical-details.jpeg",
+      "original": "image78.jpeg",
+      "section": "05-product-freya",
+      "slide": 43,
+      "caption": "Freya Technical Specifications",
+      "description": "Detailed technical specifications diagram"
+    },
+    {
+      "filename": "freya-summary-visual.jpeg",
+      "original": "image79.jpeg",
+      "section": "05-product-freya",
+      "slide": 47,
+      "caption": "Freya Summary",
+      "description": "Freya product summary and key differentiators"
+    },
+    {
+      "filename": "freya-industrial-expansion.jpeg",
+      "original": "image80.jpeg",
+      "section": "05-product-freya",
+      "slide": 48,
+      "caption": "Industrial Expansion",
+      "description": "Industrial market expansion strategy"
+    },
+    {
+      "filename": "freya-automotive-expansion.png",
+      "original": "image81.png",
+      "section": "05-product-freya",
+      "slide": 48,
+      "caption": "Automotive Expansion",
+      "description": "Automotive market expansion strategy"
+    },
+    {
+      "filename": "glink-intro.jpeg",
+      "original": "image82.jpeg",
+      "section": "06-product-glink",
+      "slide": 49,
+      "caption": "G-Link HaLow Chip",
+      "description": "G-Link product introduction"
+    },
+    {
+      "filename": "glink-positioning.jpeg",
+      "original": "image83.jpeg",
+      "section": "06-product-glink",
+      "slide": 50,
+      "caption": "G-Link Market Positioning",
+      "description": "G-Link market positioning and value proposition"
+    },
+    {
+      "filename": "scenario-smart-city-safety.jpeg",
+      "original": "image84.jpeg",
+      "section": "06-product-glink",
+      "slide": 54,
+      "caption": "Public Safety",
+      "description": "Smart city scenario: public safety infrastructure"
+    },
+    {
+      "filename": "scenario-smart-city-waste.jpeg",
+      "original": "image85.jpeg",
+      "section": "06-product-glink",
+      "slide": 54,
+      "caption": "Waste Management",
+      "description": "Smart city scenario: waste collection monitoring"
+    },
+    {
+      "filename": "scenario-smart-city-environment.jpeg",
+      "original": "image86.jpeg",
+      "section": "06-product-glink",
+      "slide": 54,
+      "caption": "Environmental Monitoring",
+      "description": "Smart city scenario: environmental sensors"
+    },
+    {
+      "filename": "scenario-smart-city-lighting.png",
+      "original": "image87.png",
+      "section": "06-product-glink",
+      "slide": 54,
+      "caption": "Smart Lighting",
+      "description": "Smart city scenario: connected street lighting"
+    },
+    {
+      "filename": "scenario-smart-city-parking.jpeg",
+      "original": "image88.jpeg",
+      "section": "06-product-glink",
+      "slide": 54,
+      "caption": "Smart Parking",
+      "description": "Smart city scenario: intelligent parking"
+    },
+    {
+      "filename": "scenario-industrial-tracking.jpeg",
+      "original": "image89.jpeg",
+      "section": "06-product-glink",
+      "slide": 55,
+      "caption": "Asset Tracking",
+      "description": "Industrial scenario: asset location tracking"
+    },
+    {
+      "filename": "scenario-industrial-safety.jpeg",
+      "original": "image90.jpeg",
+      "section": "06-product-glink",
+      "slide": 55,
+      "caption": "Safety Systems",
+      "description": "Industrial scenario: safety monitoring"
+    },
+    {
+      "filename": "scenario-industrial-pipeline.jpeg",
+      "original": "image91.jpeg",
+      "section": "06-product-glink",
+      "slide": 55,
+      "caption": "Pipeline Monitoring",
+      "description": "Industrial scenario: pipeline integrity"
+    },
+    {
+      "filename": "scenario-industrial-energy.jpeg",
+      "original": "image92.jpeg",
+      "section": "06-product-glink",
+      "slide": 55,
+      "caption": "Energy Management",
+      "description": "Industrial scenario: energy monitoring"
+    },
+    {
+      "filename": "scenario-industrial-equipment.jpeg",
+      "original": "image93.jpeg",
+      "section": "06-product-glink",
+      "slide": 55,
+      "caption": "Equipment Monitoring",
+      "description": "Industrial scenario: equipment condition monitoring"
+    },
+    {
+      "filename": "scenario-infra-transportation.png",
+      "original": "image94.png",
+      "section": "06-product-glink",
+      "slide": 56,
+      "caption": "Transportation",
+      "description": "Critical infrastructure: transportation connectivity"
+    },
+    {
+      "filename": "scenario-infra-oil-gas.jpeg",
+      "original": "image95.jpeg",
+      "section": "06-product-glink",
+      "slide": 56,
+      "caption": "Oil & Gas",
+      "description": "Critical infrastructure: oil and gas monitoring"
+    },
+    {
+      "filename": "scenario-infra-water.jpeg",
+      "original": "image96.jpeg",
+      "section": "06-product-glink",
+      "slide": 56,
+      "caption": "Water Systems",
+      "description": "Critical infrastructure: water monitoring"
+    },
+    {
+      "filename": "scenario-infra-grid.jpeg",
+      "original": "image97.jpeg",
+      "section": "06-product-glink",
+      "slide": 56,
+      "caption": "Power Grid",
+      "description": "Critical infrastructure: smart grid"
+    },
+    {
+      "filename": "scenario-agri-livestock.jpeg",
+      "original": "image98.jpeg",
+      "section": "06-product-glink",
+      "slide": 57,
+      "caption": "Livestock Management",
+      "description": "Agriculture scenario: livestock monitoring"
+    },
+    {
+      "filename": "scenario-agri-equipment.jpeg",
+      "original": "image99.jpeg",
+      "section": "06-product-glink",
+      "slide": 57,
+      "caption": "Equipment Tracking",
+      "description": "Agriculture scenario: farm equipment tracking"
+    },
+    {
+      "filename": "scenario-agri-weather.jpeg",
+      "original": "image100.jpeg",
+      "section": "06-product-glink",
+      "slide": 57,
+      "caption": "Weather Stations",
+      "description": "Agriculture scenario: weather monitoring"
+    },
+    {
+      "filename": "scenario-agri-soil.jpeg",
+      "original": "image101.jpeg",
+      "section": "06-product-glink",
+      "slide": 57,
+      "caption": "Soil Monitoring",
+      "description": "Agriculture scenario: soil sensors"
+    },
+    {
+      "filename": "scenario-logistics-cold-chain.jpeg",
+      "original": "image102.jpeg",
+      "section": "06-product-glink",
+      "slide": 58,
+      "caption": "Cold Chain Monitoring",
+      "description": "Logistics scenario: temperature-sensitive monitoring"
+    },
+    {
+      "filename": "scenario-logistics-pallet.jpeg",
+      "original": "image103.jpeg",
+      "section": "06-product-glink",
+      "slide": 58,
+      "caption": "Pallet Tracking",
+      "description": "Logistics scenario: pallet tracking"
+    },
+    {
+      "filename": "scenario-logistics-container.jpeg",
+      "original": "image104.jpeg",
+      "section": "06-product-glink",
+      "slide": 58,
+      "caption": "Container Tracking",
+      "description": "Logistics scenario: shipping container tracking"
+    },
+    {
+      "filename": "scenario-national-border.jpeg",
+      "original": "image105.jpeg",
+      "section": "06-product-glink",
+      "slide": 59,
+      "caption": "Border Security",
+      "description": "National scenario: border monitoring"
+    },
+    {
+      "filename": "scenario-national-emergency.jpeg",
+      "original": "image106.jpeg",
+      "section": "06-product-glink",
+      "slide": 59,
+      "caption": "Emergency Communications",
+      "description": "National scenario: emergency response"
+    },
+    {
+      "filename": "scenario-national-remote-coverage.jpeg",
+      "original": "image107.jpeg",
+      "section": "06-product-glink",
+      "slide": 59,
+      "caption": "Remote Coverage",
+      "description": "National scenario: rural and remote connectivity"
+    },
+    {
+      "filename": "flexv-intro.jpeg",
+      "original": "image108.jpeg",
+      "section": "07-product-flexv",
+      "slide": 60,
+      "caption": "FlexV SDR Platform",
+      "description": "FlexV product introduction"
+    },
+    {
+      "filename": "flexv-market-positioning.jpeg",
+      "original": "image109.jpeg",
+      "section": "07-product-flexv",
+      "slide": 61,
+      "caption": "FlexV Market Positioning",
+      "description": "FlexV strategic positioning"
+    },
+    {
+      "filename": "flexv-application-scenarios.jpeg",
+      "original": "image110.jpeg",
+      "section": "07-product-flexv",
+      "slide": 62,
+      "caption": "FlexV Application Scenarios Overview",
+      "description": "Overview of all FlexV use cases"
+    },
+    {
+      "filename": "scenario-military-navwar.jpeg",
+      "original": "image111.jpeg",
+      "section": "07-product-flexv",
+      "slide": 63,
+      "caption": "NAVWAR",
+      "description": "Military scenario: navigation warfare"
+    },
+    {
+      "filename": "scenario-military-satcom.jpeg",
+      "original": "image112.jpeg",
+      "section": "07-product-flexv",
+      "slide": 63,
+      "caption": "SATCOM",
+      "description": "Military scenario: satellite communications"
+    },
+    {
+      "filename": "scenario-military-radar.jpeg",
+      "original": "image113.jpeg",
+      "section": "07-product-flexv",
+      "slide": 63,
+      "caption": "Radar Systems",
+      "description": "Military scenario: software-defined radar"
+    },
+    {
+      "filename": "scenario-military-tactical.jpeg",
+      "original": "image114.jpeg",
+      "section": "07-product-flexv",
+      "slide": 63,
+      "caption": "Tactical Communications",
+      "description": "Military scenario: tactical comms"
+    },
+    {
+      "filename": "scenario-military-cognitive-radio.png",
+      "original": "image115.png",
+      "section": "07-product-flexv",
+      "slide": 63,
+      "caption": "Cognitive Radio",
+      "description": "Military scenario: AI-driven cognitive radio"
+    },
+    {
+      "filename": "scenario-commercial-private-networks.jpeg",
+      "original": "image116.jpeg",
+      "section": "07-product-flexv",
+      "slide": 64,
+      "caption": "Private Networks",
+      "description": "Commercial scenario: enterprise private networks"
+    },
+    {
+      "filename": "scenario-commercial-wifi7-testing.jpeg",
+      "original": "image117.jpeg",
+      "section": "07-product-flexv",
+      "slide": 64,
+      "caption": "Wi-Fi 7 Testing",
+      "description": "Commercial scenario: Wi-Fi 7 protocol testing"
+    },
+    {
+      "filename": "scenario-commercial-ntn.jpeg",
+      "original": "image118.jpeg",
+      "section": "07-product-flexv",
+      "slide": 64,
+      "caption": "Non-Terrestrial Networks (NTN)",
+      "description": "Commercial scenario: NTN integration"
+    },
+    {
+      "filename": "scenario-commercial-5g-6g.jpeg",
+      "original": "image119.jpeg",
+      "section": "07-product-flexv",
+      "slide": 64,
+      "caption": "5G/6G Research",
+      "description": "Commercial scenario: next-gen cellular research"
+    },
+    {
+      "filename": "scenario-iot-lpwan-base-station.jpeg",
+      "original": "image120.jpeg",
+      "section": "07-product-flexv",
+      "slide": 65,
+      "caption": "LPWAN Base Station",
+      "description": "IoT scenario: LPWAN base stations"
+    },
+    {
+      "filename": "scenario-iot-multi-protocol-gateway.png",
+      "original": "image121.png",
+      "section": "07-product-flexv",
+      "slide": 65,
+      "caption": "Multi-Protocol Gateway",
+      "description": "IoT scenario: multi-protocol gateway"
+    },
+    {
+      "filename": "scenario-test-channel-sounding.png",
+      "original": "image122.png",
+      "section": "07-product-flexv",
+      "slide": 66,
+      "caption": "Channel Sounding",
+      "description": "Test scenario: wireless channel measurement"
+    },
+    {
+      "filename": "scenario-test-radar-sim.png",
+      "original": "image123.png",
+      "section": "07-product-flexv",
+      "slide": 66,
+      "caption": "Radar Simulation",
+      "description": "Test scenario: radar signal simulation"
+    },
+    {
+      "filename": "scenario-test-5g-testing.png",
+      "original": "image124.png",
+      "section": "07-product-flexv",
+      "slide": 66,
+      "caption": "5G Testing",
+      "description": "Test scenario: 5G NR testing and validation"
+    },
+    {
+      "filename": "scenario-test-compliance.jpeg",
+      "original": "image125.jpeg",
+      "section": "07-product-flexv",
+      "slide": 66,
+      "caption": "Compliance Testing",
+      "description": "Test scenario: RF compliance and certification"
+    },
+    {
+      "filename": "divider.png",
+      "original": "image126.png",
+      "section": "08-product-overview",
+      "slide": 67,
+      "caption": "Section Divider",
+      "description": "Divider graphic"
+    },
+    {
+      "filename": "comparison-flexv.png",
+      "original": "image127.png",
+      "section": "08-product-overview",
+      "slide": 68,
+      "caption": "FlexV Product Card",
+      "description": "FlexV summary card for three-product comparison"
+    },
+    {
+      "filename": "comparison-freya.png",
+      "original": "image128.png",
+      "section": "08-product-overview",
+      "slide": 68,
+      "caption": "Freya Product Card",
+      "description": "Freya summary card for three-product comparison"
+    },
+    {
+      "filename": "comparison-glink.png",
+      "original": "image129.png",
+      "section": "08-product-overview",
+      "slide": 68,
+      "caption": "G-Link Product Card",
+      "description": "G-Link summary card for three-product comparison"
+    },
+    {
+      "filename": "closing.jpeg",
+      "original": "image130.jpeg",
+      "section": "08-product-overview",
+      "slide": 69,
+      "caption": "Closing",
+      "description": "Presentation closing slide"
+    }
+  ]
+}
